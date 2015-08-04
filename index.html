@@ -1,3 +1,9 @@
+<?php
+if($_POST["message"]) {
+    mail("your@email.address", "Form to email message", $_POST["message"], "From: an@email.address");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,7 +73,6 @@
                                 <li><a href="#about">About</a></li>
                                 <li><a href="#project">Projects</a></li>
                                 <li class="last"><a href="#contact">Contact</a></li>
-                                <!--li><a href="#features">Features</a></li-->
                             </ul>
                         </div>
                     </div>
@@ -356,16 +361,16 @@
     <div class="container">
         <div class="row">
             <div class="col-md-9 col-xs-12 forma">
-                <form>
-                    <input type="text" class="col-md-6 col-xs-12 name" name='name' placeholder='Name *'/>
-                    <input type="text" class="col-md-6 col-xs-12 Email" name='Email' placeholder='Email *'/>
-                    <input type="text" class="col-md-12 col-xs-12 Subject" name='Subject' placeholder='Subject'/>
-                    <textarea type="text" class="col-md-12 col-xs-12 Message" name='Message'
-                              placeholder='Message *'></textarea>
-
+                <form method="post" name="contact_form" action="contact-form-handler.php">
+                    <input type="text" class="col-md-6 col-xs-12 name" name="name" placeholder='Name *'/>
+                    <input type="text" class="col-md-6 col-xs-12 Email" name="email" placeholder='Email *'/>
+                    <textarea type="text" class="col-md-12 col-xs-12 Message" name="message" placeholder='Message *'>
+                    </textarea>
                     <div class="cBtn col-xs-12">
                         <ul>
-                            <li class="send"><a href=""><i class="fa fa-share"></i>Send Message</a></li>
+                            <li class="send"><a onclick="$(this).closest('form').submit()">
+                                <i class="fa fa-share"></i>Send Message
+                            </a></li>
                         </ul>
                     </div>
                 </form>
@@ -391,7 +396,6 @@
         </div>
     </div>
 </div>
-
 
 <script src="js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/bootstrap.min.js"></script>
