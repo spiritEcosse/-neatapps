@@ -66,7 +66,7 @@
                     <div class="logo col-md-4">
                         <div>
                             <a href="#">
-                                <img src="{% static %}/assets/images/logo.png">
+                                <img src="{% static 'assets/images/logo.png' %}">
                             </a>
                         </div>
                     </div>
@@ -87,17 +87,17 @@
             <div class="row wrap">
                 <div class="col-md-12 gallery">
                     <div class="camera_wrap camera_white_skin" id="camera_wrap_1">
-                        <div data-thumb="" data-src="images/slides/blank.gif">
+                        <div data-thumb="" data-src="{% static 'assets/images/slides/blank.gif' %}">
                             <div class="img-responsive camera_caption fadeFromBottom">
                                 <h2>We listen</h2>
                             </div>
                         </div>
-                        <div data-thumb="" data-src="images/slides/blank.gif">
+                        <div data-thumb="" data-src="{% static 'assets/images/slides/blank.gif' %}">
                             <div class="img-responsive camera_caption fadeFromBottom">
                                 <h2>We discuss</h2>
                             </div>
                         </div>
-                        <div data-thumb="" data-src="images/slides/blank.gif">
+                        <div data-thumb="" data-src="{% static 'assets/images/slides/blank.gif' %}">
                             <div class="img-responsive camera_caption fadeFromBottom">
                                 <h2>We develop</h2>
                             </div>
@@ -120,7 +120,7 @@
         <div class="row">
             <div class="col-md-3 bar">
                 <div align="middle">
-                    <img src="{% static %}/assets/images/monitor.png">
+                    <img src="{% static 'assets/images/monitor.png' %}">
                 </div>
                 <div class="textP">
                     <h3>Web</h3>
@@ -128,7 +128,7 @@
             </div>
             <div class="col-md-3 bar">
                 <div align="middle">
-                    <img src="{% static %}/assets/images/android.png">
+                    <img src="{% static 'assets/images/android.png' %}">
                 </div>
                 <div class="textP">
                     <h3>Android</h3>
@@ -136,7 +136,7 @@
             </div>
             <div class="col-md-3 bar ">
                 <div align="middle">
-                    <img src="{% static %}/assets/images/ios.png">
+                    <img src="{% static 'assets/images/ios.png' %}">
                 </div>
                 <div class="textP">
                     <h3>iOS</h3>
@@ -144,7 +144,7 @@
             </div>
             <div class="col-md-3 bar ">
                 <div align="middle">
-                    <img src="{% static %}/assets/images/windows.png">
+                    <img src="{% static 'assets/images/windows.png' %}">
                 </div>
                 <div class="textP">
                     <h3>Windows phone</h3>
@@ -198,7 +198,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 centPic">
-                    <img class="img-responsive" src="{% static '/assets/images/bizPic2.png' %}"/>
+                    <img class="img-responsive" src="{% static 'assets/images/bizPic2.png' %}"/>
                 </div>
             </div>
         </div>
@@ -240,8 +240,8 @@
 
             <div class="portfolio_block columns3   pretty" data-animated="fadeIn">
                 <div class="element col-sm-4   gall android">
-                    <a class="plS" href="{% static '/assets/images/prettyPhotoImages/avi.jpg' %}" rel="prettyPhoto[gallery2]">
-                        <img class="img-responsive picsGall" src="{% static '/assets/images/prettyPhotoImages/thumb_avi.jpg' %}"
+                    <a class="plS" href="{% static 'assets/images/prettyPhotoImages/avi.jpg' %}" rel="prettyPhoto[gallery2]">
+                        <img class="img-responsive picsGall" src="{% static 'assets/images/prettyPhotoImages/thumb_avi.jpg' %}"
                              alt="Breathing exercises: Anuloma Viloma"/>
                     </a>
 
@@ -257,8 +257,8 @@
                     </div>
                 </div>
                 <div class="element col-sm-4  gall android">
-                    <a class="plS" href="{% static '/assets/images/prettyPhotoImages/mindnotes.jpg' %}" rel="prettyPhoto[gallery2]">
-                        <img class="img-responsive picsGall" src="{% static '/assets/images/prettyPhotoImages/thumb_mindnotes.jpg' %}"
+                    <a class="plS" href="{% static 'assets/images/prettyPhotoImages/mindnotes.jpg' %}" rel="prettyPhoto[gallery2]">
+                        <img class="img-responsive picsGall" src="{% static 'assets/images/prettyPhotoImages/thumb_mindnotes.jpg' %}"
                              alt="Mindnotes: notepad with tags and sub-tags!"/>
                     </a>
 
