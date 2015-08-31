@@ -3,7 +3,7 @@
 # Run this with
 # PYTHONPATH=. DJANGO_SETTINGS_MODULE=neatapps.settings tornado_main.py
 
-from fs.settings import BASE_DIR
+from neatapps.settings import BASE_DIR
 import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "neatapps.settings")
 
