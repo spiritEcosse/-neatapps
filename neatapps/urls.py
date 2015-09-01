@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from neatapps import settings
-from neatapps.views import IndexView
+from neatapps.views import IndexView, ThanksView
 from django.contrib import admin
 from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^$', IndexView.as_view(), name='home'),
+    url(r'^thanks/$', ThanksView.as_view(), name='thanks'),
     url(r'^admin/', include(admin.site.urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

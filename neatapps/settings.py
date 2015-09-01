@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'debug_toolbar',
+    'djangular',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -117,4 +118,14 @@ STATIC_ROOT = os.path.join(BASE_DIR,  'static_root')
 MEDIA_ROOT = os.path.join(BASE_DIR,  'media')
 MEDIA_URL = "/media/"
 
-DEFAULT_FROM_EMAIL = 'shevchenkcoigor@gmail.com'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+import settings_local
+
+DEFAULT_FROM_EMAIL = settings_local.DEFAULT_FROM_EMAIL
+EMAIL_COMPANY = settings_local.EMAIL_COMPANY
+EMAIL_HOST_USER = settings_local.EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = settings_local.EMAIL_HOST_PASSWORD
+EMAIL_HOST = settings_local.EMAIL_HOST
+EMAIL_PORT = settings_local.EMAIL_PORT
+EMAIL_USE_SSL = settings_local.EMAIL_USE_SSL
