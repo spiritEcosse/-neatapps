@@ -19,6 +19,7 @@ class IndexView(FormView):
             send_mail(_('You received a letter from the site %s') % (request.META['HTTP_HOST'],),
                       form.cleaned_data['comment'], form.cleaned_data['email'], [EMAIL_COMPANY],
                       fail_silently=False)
+            self.success_url = '%s%s' % (request.META['HTTP_HOST'], self.success_url)
             return self.form_valid(form)
         return self.form_invalid(form)
 
