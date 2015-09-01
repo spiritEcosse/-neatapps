@@ -266,11 +266,11 @@
                         {% csrf_token %}
                         {{ form.as_div }}
                         <div class="cBtn" >
-                            <a type="submit" ng-disabled="{{ form.form_name }}.$invalid"
+                            <button type="submit" ng-disabled="{{ form.form_name }}.$invalid"
                                class="btn send btn-group-lg">
                                 <i class="fa fa-share"></i>
                                 {% trans 'Send Message' %}
-                            </a>
+                            </button>
                         </div>
                     </form>
                 </div>
