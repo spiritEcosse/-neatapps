@@ -7969,7 +7969,8 @@ body {
   z-index: 10;
   margin-top: 48px;
 }
-.forma input {
+.forma input,
+.forma textarea {
   border-radius: 4px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -8010,7 +8011,6 @@ textarea {
   color: #555555;
   background: #ededed;
   border: none;
-  max-width: 816px;
   height: 153px;
   resize: none;
 }
