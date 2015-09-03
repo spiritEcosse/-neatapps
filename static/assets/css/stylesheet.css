@@ -8815,12 +8815,17 @@ margin-bottom: 35px !important;
   -moz-border-radius: 5px;
   z-index: 999999;
   position: fixed;
-  bottom: 30px;
   right: 10px;
 }
 .btn_position img {
   max-width: 50px;
   max-height: 50px;
+}
+.btn-up {
+  bottom: 30px;
+}
+.btn-down {
+  bottom: 121px;
 }
 #scrollup {
   position: fixed;
