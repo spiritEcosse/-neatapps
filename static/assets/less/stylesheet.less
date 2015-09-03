@@ -597,6 +597,10 @@ border: none;
 }
 .bar{
 	margin-top: 32px;
+
+  &:hover {
+    background: #DFDFDF;
+  }
 }
 /*.bar:first-child{
 	padding-left:0;
@@ -2073,7 +2077,25 @@ margin-bottom: 35px !important;
 
 /**/
 
+.btn_position {
+  cursor: pointer;
+  display: none;
+  opacity: 0.8; /* прозрачность */
+  padding: 15px 10px 10px; /* отступы */
+  background: #aaa;
+  border-radius: 5px; /* скругление углов */
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  z-index: 999999;
+  position: fixed;
+  bottom: 30px;
+  right: 10px;
 
+  img {
+    max-width: 50px;
+    max-height: 50px;
+  }
+}
 #scrollup {
   position: fixed; /* фиксированная позиция */
   opacity: 0.8; /* прозрачность */
