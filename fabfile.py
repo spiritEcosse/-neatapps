@@ -34,6 +34,11 @@ def local_act():
     local("./manage.py collectstatic -c --noinput")
     local("git add .")
     local("git commit -a -F git_commit_message")
+    current_branch = local("git rev-parse --abbrev-ref HEAD")
+
+    if current_branch != 'master':
+        local("git checkout master")
+        local("git merge %s" % current_branch)
     local("git push origin")
     local("git push production")
     local("git push my_repo_neatapps_bit")
