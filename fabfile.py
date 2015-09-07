@@ -37,8 +37,9 @@ def local_act():
     current_branch = local("git rev-parse --abbrev-ref HEAD")
 
     if current_branch != 'master':
-        local("git checkout master")
-        local("git merge {0}".format(current_branch))
+        # local("git checkout master")
+        # local("git merge {0}".format(current_branch))
+        print(current_branch)
         
     local("git push origin")
     local("git push production")
