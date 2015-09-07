@@ -31,7 +31,7 @@ def local_act():
     execfile(activate_env, dict(__file__=activate_env))
     local("./manage.py test")
     local("%s%s" % ('pip freeze > ', REQUIREMENTS_FILE))
-    # local("./manage.py collectstatic -c --noinput")
+    local("./manage.py collectstatic -c --noinput")
     local("git add .")
     local("git commit -a -F git_commit_message")
     local("git push origin")
