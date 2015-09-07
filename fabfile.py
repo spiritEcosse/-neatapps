@@ -38,7 +38,8 @@ def local_act():
 
     if current_branch != 'master':
         local("git checkout master")
-        local("git merge %s" % current_branch)
+        local("git merge %s" % (current_branch, ))
+        
     local("git push origin")
     local("git push production")
     local("git push my_repo_neatapps_bit")
