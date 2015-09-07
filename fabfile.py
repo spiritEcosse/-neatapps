@@ -17,8 +17,8 @@ def deploy():
     :return:
     """
     local_act()
-    update_requirements()
-    touch()
+    # update_requirements()
+    # touch()
 
 
 def local_act():
@@ -29,18 +29,17 @@ def local_act():
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "neatapps.settings")
     activate_env = os.path.expanduser(os.path.join(BASE_DIR, ".env/bin/activate_this.py"))
     execfile(activate_env, dict(__file__=activate_env))
-    local("./manage.py test")
-    local("%s%s" % ('pip freeze > ', REQUIREMENTS_FILE))
+    # local("./manage.py test")
+    # local("%s%s" % ('pip freeze > ', REQUIREMENTS_FILE))
     # local("./manage.py collectstatic -c --noinput")
     local("git add .")
     local("git commit -a -F git_commit_message")
-    current_branch = local("git rev-parse --abbrev-ref HEAD")
+    current_branch = local("git symbolic-ref --short -q HEAD", capture=True)
 
     if current_branch != 'master':
-        # local("git checkout master")
-        # local("git merge {0}".format(current_branch))
-        print(current_branch)
-        
+        local("git checkout master")
+        local("git merge " + current_branch)
+
     local("git push origin")
     local("git push production")
     local("git push my_repo_neatapps_bit")
