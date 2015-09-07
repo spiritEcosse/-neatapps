@@ -35,7 +35,8 @@ def local_act():
     local("git add .")
     local("git commit -F git_commit_message")
     local("git push origin")
-    local("git push bit")
+    local("git push production")
+    local("git push my_repo_neatapps_bit")
 
 
 def touch():
