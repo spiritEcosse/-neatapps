@@ -15,7 +15,7 @@ class FeedbackForm(NgForm, NgFormValidationMixin, Feedback):
 class IndexView(FormView):
     template_name = 'base.html'
     form_class = FeedbackForm
-    success_url = '/thanks/'
+    success_url = '/'
 
     def post(self, request, *args, **kwargs):
         form = self.get_form()
@@ -26,7 +26,3 @@ class IndexView(FormView):
                       fail_silently=False)
             return self.form_valid(form)
         return self.form_invalid(form=form)
-
-
-class ThanksView(TemplateView):
-    template_name = 'thanks.html'

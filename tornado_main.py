@@ -26,7 +26,6 @@ define('port', type=int, default=7777)
 
 def main():
     parse_command_line()
-    autoreload.watch(os.path.abspath(__file__))
     wsgi_app = tornado.wsgi.WSGIContainer(
         django.core.handlers.wsgi.WSGIHandler())
     tornado_app = tornado.web.Application(
