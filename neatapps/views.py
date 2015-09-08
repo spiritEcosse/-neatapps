@@ -26,3 +26,7 @@ class IndexView(FormView):
                       fail_silently=False)
             return self.form_valid(form)
         return self.form_invalid(form=form)
+
+
+class ThanksView(TemplateView):
+    template_name = 'thanks.html'
