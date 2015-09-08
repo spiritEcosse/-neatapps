@@ -27,4 +27,21 @@
 
   app = angular.module(app_name + ".controllers", []);
 
+  app.controller('MyFormCtrl', [
+    '$http', '$scope', '$window', 'djangoForm', function($http, $scope, $window, djangoForm) {
+      return $scope.submit = function() {
+        if ($scope.feedback) {
+          $http.post(".", $scope.feedback).success(function(data) {
+            if (!djangoForm.setErrors($scope.feedback, data.errors)) {
+              return $window.location.href = out_data.success_url;
+            }
+          }).error(function() {
+            return console.error('An error occured during submission');
+          });
+        }
+        return false;
+      };
+    }
+  ]);
+
 }).call(this);

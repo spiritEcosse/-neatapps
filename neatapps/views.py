@@ -5,12 +5,17 @@ from forms import Feedback
 from django.core.mail import send_mail
 from neatapps.settings import EMAIL_COMPANY
 from django.utils.translation import ugettext_lazy as _
+from djangular.forms import NgFormValidationMixin, NgForm
+
+
+class FeedbackForm(NgForm, NgFormValidationMixin, Feedback):
+    pass
 
 
 class IndexView(FormView):
     template_name = 'base.html'
-    form_class = Feedback
-    success_url = '/thanks/'
+    form_class = FeedbackForm
+    success_url = '/'
 
     def post(self, request, *args, **kwargs):
         form = self.get_form()
@@ -20,8 +25,4 @@ class IndexView(FormView):
                       form.cleaned_data['comment'], form.cleaned_data['email'], [EMAIL_COMPANY],
                       fail_silently=False)
             return self.form_valid(form)
-        return self.form_invalid(form)
-
-
-class ThanksView(TemplateView):
-    template_name = 'thanks.html'
+        return self.form_invalid(form=form)

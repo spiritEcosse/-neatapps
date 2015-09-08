@@ -259,15 +259,14 @@
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container" id="form">
             <div class="row">
                 <div class="col-md-9 col-xs-12 forma" >
-                    <form name="{{ form.form_name }}" method="post" novalidate action=".">
+                    <form ng-controller="MyFormCtrl" name="{{ form.form_name }}" method="post" novalidate action=".">
                         {% csrf_token %}
                         {{ form.as_div }}
                         <div class="cBtn" >
-                            <button type="submit" ng-disabled="{{ form.form_name }}.$invalid"
-                               class="btn send btn-group-lg">
+                            <button type="submit" ng-disabled="{{ form.form_name }}.$invalid" class="btn send btn-group-lg">
                                 <i class="fa fa-share"></i>
                                 {% trans 'Send Message' %}
                             </button>
@@ -434,7 +433,6 @@
             contentTop.push( $( $(this).attr('href') ).offset().top );
             contentBottom.push( $( $(this).attr('href') ).offset().top + $( $(this).attr('href') ).height() );
         });
-        console.log(winTop);
 
         $.each( contentTop, function(i){
             if ( winTop >= contentTop[i] - rangeTop ){
@@ -464,8 +462,9 @@
     });
 </script>
 <script src="{% static "bower_components/angular/angular.js" %}" type="text/javascript"></script>
-<script src="{% static "apps/neatapps/src/js/script.js" %}" type="text/javascript"></script>
+{{ block.super }}
 <script src="{% static 'client/src/js/ng-django-forms.js' %}" type="text/javascript"></script>
+<script src="{% static "apps/neatapps/src/js/script.js" %}" type="text/javascript"></script>
 
 <a class="btn-up btn_position" id='Top'>
     <img src="{% static "assets/images/up.png" %}"  title="{% trans "Вверх" %}">
