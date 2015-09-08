@@ -18,7 +18,6 @@ def deploy():
     """
     local_act()
     update_requirements()
-    touch()
 
 
 def local_act():
@@ -44,15 +43,6 @@ def local_act():
     local("git push origin")
     local("git push production")
     local("git push my_repo_neatapps_bit")
-
-
-def touch():
-    """
-    reload tornado script
-    :return: None
-    """
-    with cd(PROJECT_DIR):
-        run('touch %s' % TORNADO_SCRIPT)
 
 
 def update_requirements():
