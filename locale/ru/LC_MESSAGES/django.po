@@ -1,0 +1,149 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-08 15:09+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: templates/base.html:6
+msgid "Neatapps – software development company"
+msgstr "Neatapps - компания разработки программного обеспечения"
+
+#: templates/base.html:60 templates/base.html.py:317
+msgid "Home"
+msgstr "Главная"
+
+#: templates/base.html:61 templates/base.html.py:318
+msgid "Services"
+msgstr "Сервисы"
+
+#: templates/base.html:62 templates/base.html.py:319
+msgid "About"
+msgstr "О нас"
+
+#: templates/base.html:63 templates/base.html.py:320
+msgid "Projects"
+msgstr "Проэкты"
+
+#: templates/base.html:64 templates/base.html.py:321
+msgid "Contact"
+msgstr "Контакты"
+
+#: templates/base.html:77
+msgid "We listen"
+msgstr "Мы слушаем"
+
+#: templates/base.html:82
+msgid "We discuss"
+msgstr "Мы обсуждаем"
+
+#: templates/base.html:87
+msgid "We develop"
+msgstr "Мы разрабатываем"
+
+#: templates/base.html:103
+msgid "Just neat applications"
+msgstr "Просто аккуратные приложения"
+
+#: templates/base.html:104
+msgid "Applications for everyone and elegant solution for your business."
+msgstr "Приложения для всех и элегантное решение для Вашего бизнеса."
+
+#: templates/base.html:153
+msgid "Fresh & Clean Design"
+msgstr "Свежий и Чистый дизайн"
+
+#: templates/base.html:160
+msgid "User Oriented"
+msgstr "Пользователь ориентированное"
+
+#: templates/base.html:163
+msgid "Nothing unnecessary. "
+msgstr "Ничего лишнего."
+
+#: templates/base.html:164
+msgid "Just what user need."
+msgstr "Только то, что нужно пользователю."
+
+#: templates/base.html:170
+msgid "Native Platform Development"
+msgstr "Разработка встроенной платформы"
+
+#: templates/base.html:172
+msgid "It works fast and reliably."
+msgstr "Это работает быстро и надежно."
+
+#: templates/base.html:182
+msgid "Who We Are?"
+msgstr "Кто мы ?"
+
+#: templates/base.html:183
+msgid ""
+"Neatapps is a team of dedicated software developers. We love to create neat "
+"software products."
+msgstr ""
+"Neatapps это команда специализированных разработчиков программного "
+"обеспечения. Мы любим создать аккуратные приложения."
+
+#: templates/base.html:185
+msgid ""
+"We listen, we discuss and develop. We love to learn and use the latest "
+"technologies."
+msgstr ""
+"Мы выслушаем, мы обсудим и разработаем. Мы любим учиться и использовать "
+"новейшие технологии."
+
+#: templates/base.html:212
+msgid "Our Amazing Works"
+msgstr "Наши удивительные работы"
+
+#: templates/base.html:224
+msgid "All Works"
+msgstr "Все работы"
+
+#: templates/base.html:238 templates/base.html.py:245
+msgid "Breathing exercises: Anuloma Viloma"
+msgstr "Дыхательные упражнения: Anuloma Viloma"
+
+#: templates/base.html:256 templates/base.html.py:260
+msgid "Mindnotes: notepad with tags and sub-tags!"
+msgstr "Mindnotes: блокнот с тегами и под-тегами!"
+
+#: templates/base.html:278
+msgid "Got a Question? We&rsquo;re Here to Help!"
+msgstr "Есть вопрос? Мы здесь, чтобы помочь!"
+
+#: templates/base.html:280
+msgid "Get in touch with us"
+msgstr "Свяжитесь с нами"
+
+#: templates/base.html:294
+msgid "Send Message"
+msgstr "Отправить сообщение"
+
+#: templates/base.html:305
+msgid "All Rights Reserved."
+msgstr "Все права защищены."
+
+#: templates/base.html:499
+msgid "Up"
+msgstr "Вверх"
+
+#: templates/base.html:502
+msgid "Down"
+msgstr "Вниз"
+

@@ -6867,6 +6867,16 @@ body {
 .row{
 	outline:1px solid #f00;
 }*/
+.container .langs {
+  margin-top: 10px;
+  overflow: hidden;
+}
+.container .langs .lang {
+  margin-left: 10px;
+}
+.container .langs .lang:last-child {
+  margin-left: 0;
+}
 .logo {
   margin-top: 60px;
   font-family: 'Roboto', 'sans-serif';

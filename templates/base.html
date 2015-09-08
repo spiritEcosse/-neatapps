@@ -3,7 +3,7 @@
 <head>
     {% load staticfiles %}
     {% load i18n %}
-    <title>{% block title %}Neatapps – software development company{% endblock %}</title>
+    <title>{% block title %}{% trans "Neatapps – software development company" %}{% endblock %}</title>
 
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,6 +23,9 @@
     <link href="{% static 'assets/css/stylesheet.css' %}" rel="stylesheet" type="text/css">
 </head>
 <body >
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_language_info_list for LANGUAGES as languages %}
 
 {% block container %}
     <div id="home">
@@ -38,13 +41,27 @@
                             </div>
                         </div>
                         <div class="col-md-8">
-                            <div class="navmenu" style="text-align: center;">
+                            <div class="langs text-right">
+                            {% for language in languages %}
+                                <div class="lang pull-right">
+                                    <form action="{% url 'set_language' %}" method="post">
+                                        {% csrf_token %}
+                                        <input name="language" type="hidden" value="{{ language.code }}" />
+                                        <button class="btn {% if language.code == LANGUAGE_CODE %}btn-primary{% else %}btn-default{% endif %}" type="submit">
+                                            {{ language.name_local }}
+                                        </button>
+                                    </form>
+                                </div>
+                            {% endfor %}
+                            </div>
+
+                            <div class="navmenu text-center">
                                 <ul id="menu">
-                                    <li class="active"><a href="#home">Home</a></li>
-                                    <li><a href="#services">Services</a></li>
-                                    <li><a href="#about">About</a></li>
-                                    <li><a href="#project">Projects</a></li>
-                                    <li class="last"><a href="#contact">Contact</a></li>
+                                    <li class="active"><a href="#home">{% trans "Home" %}</a></li>
+                                    <li><a href="#services">{% trans "Services" %}</a></li>
+                                    <li><a href="#about">{% trans "About" %}</a></li>
+                                    <li><a href="#project">{% trans "Projects" %}</a></li>
+                                    <li class="last"><a href="#contact">{% trans "Contact" %}</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -57,17 +74,17 @@
                         <div class="camera_wrap camera_white_skin" id="camera_wrap_1">
                             <div data-thumb="" data-src="{% static 'assets/images/slides/blank.gif' %}">
                                 <div class="img-responsive camera_caption fadeFromBottom">
-                                    <h2>We listen</h2>
+                                    <h2>{% trans "We listen" %}</h2>
                                 </div>
                             </div>
                             <div data-thumb="" data-src="{% static 'assets/images/slides/blank.gif' %}">
                                 <div class="img-responsive camera_caption fadeFromBottom">
-                                    <h2>We discuss</h2>
+                                    <h2>{% trans "We discuss" %}</h2>
                                 </div>
                             </div>
                             <div data-thumb="" data-src="{% static 'assets/images/slides/blank.gif' %}">
                                 <div class="img-responsive camera_caption fadeFromBottom">
-                                    <h2>We develop</h2>
+                                    <h2>{% trans "We develop" %}</h2>
                                 </div>
                             </div>
                         </div>
@@ -83,8 +100,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 cBusiness">
-                    <h3>Just neat applications</h3>
-                    <h4>Applications for everyone and elegant solution for your business.</h4>
+                    <h3>{% trans "Just neat applications" %}</h3>
+                    <h4>{% trans "Applications for everyone and elegant solution for your business." %}</h4>
                 </div>
             </div>
         </div>
@@ -133,23 +150,26 @@
                 <div class="row Fresh">
                     <div class="col-md-4 Des">
                         <i class="fa fa-heart"></i>
-                        <h4>Fresh & Clean Design</h4>
+                        <h4>{% trans "Fresh & Clean Design" %}</h4>
 
                         <p></p>
                     </div>
 
                     <div class="col-md-4 Ver">
                         <i class="fa fa-cog"></i>
-                        <h4>User Oriented</h4>
+                        <h4>{% trans "User Oriented" %}</h4>
 
-                        <p>Nothing unnecessary. <br>Just what user need.</p>
+                        <p>
+                            {% trans "Nothing unnecessary. " %}<br>
+                            {% trans "Just what user need." %}
+                        </p>
                     </div>
 
                     <div class="col-md-4 Fully">
                         <i class="fa fa-tablet"></i>
-                        <h4>Native Platform Development</h4>
+                        <h4>{% trans "Native Platform Development" %}</h4>
 
-                        <p>It works fast and reliably. </p>
+                        <p>{% trans "It works fast and reliably." %}</p>
                     </div>
                 </div>
             </div>
@@ -159,10 +179,10 @@
                 <div class="col-md-12 wwa">
                     <span name="about"></span>
 
-                    <h3>Who We Are? </h3>
-                    <h4>Neatapps is a team of dedicated software developers. We love to create neat software
-                        products.<br><br>
-                        We listen, we discuss and develop. We love to learn and use the latest technologies.
+                    <h3>{% trans "Who We Are?" %}</h3>
+                    <h4>{% trans "Neatapps is a team of dedicated software developers. We love to create neat software products." %}
+                        <br><br>
+                        {% trans "We listen, we discuss and develop. We love to learn and use the latest technologies." %}
                     </h4>
                 </div>
             </div>
@@ -189,7 +209,7 @@
                         <br>
                         <br>
 
-                        <h3>Our Amazing Works</h3>
+                        <h3>{% trans "Our Amazing Works" %}</h3>
                     </div>
                 </div>
             </div>
@@ -200,7 +220,9 @@
                 <!-- filter_block -->
                 <div id="options" class="col-md-12" style="text-align: center;">
                     <ul id="filter" class="option-set" data-option-key="filter">
-                        <li><a class="selected" href="#filter" data-option-value="*" class="current">All Works</a></li>
+                        <li><a class="selected" href="#filter" data-option-value="*" class="current">
+                            {% trans "All Works" %}
+                        </a></li>
                         <li><a href="#filter" data-option-value=".web">Web</a></li>
                         <li><a href="#filter" data-option-value=".android">Android</a></li>
                         <li><a href="#filter" data-option-value=".ios">iOS</a></li>
@@ -213,14 +235,15 @@
                     <div class="element col-sm-4   gall android">
                         <a class="plS" href="{% static 'assets/images/prettyPhotoImages/avi.jpg' %}" rel="prettyPhoto[gallery2]">
                             <img class="img-responsive picsGall" src="{% static 'assets/images/prettyPhotoImages/thumb_avi.jpg' %}"
-                                 alt="Breathing exercises: Anuloma Viloma"/>
+                                 alt="{% trans "Breathing exercises: Anuloma Viloma" %}"/>
                         </a>
 
                         <div class="view project_descr">
                             <h3>
                                 <a target="_blank"
-                                   href="https://play.google.com/store/apps/details?id=net.neatapps.avi.app">Breathing
-                                    exercises: Anuloma Viloma</a>
+                                   href="https://play.google.com/store/apps/details?id=net.neatapps.avi.app">
+                                    {% trans "Breathing exercises: Anuloma Viloma" %}
+                                </a>
                             </h3>
                             <ul>
                                 <br>
@@ -230,11 +253,11 @@
                     <div class="element col-sm-4  gall android">
                         <a class="plS" href="{% static 'assets/images/prettyPhotoImages/mindnotes.jpg' %}" rel="prettyPhoto[gallery2]">
                             <img class="img-responsive picsGall" src="{% static 'assets/images/prettyPhotoImages/thumb_mindnotes.jpg' %}"
-                                 alt="Mindnotes: notepad with tags and sub-tags!"/>
+                                 alt="{% trans "Mindnotes: notepad with tags and sub-tags!" %}"/>
                         </a>
 
                         <div class="view project_descr center">
-                            <h3><a href="#">Mindnotes: notepad with tags and sub-tags!</a></h3>
+                            <h3><a href="#">{% trans "Mindnotes: notepad with tags and sub-tags!" %}</a></h3>
                             <ul>
                                 <br>
                             </ul>
@@ -252,9 +275,9 @@
             <div class="container">
                 <div class="row Ama">
                     <div class="col-md-12">
-                        <h3>Got a Question? We&rsquo;re Here to Help!</h3>
+                        <h3>{% trans "Got a Question? We&rsquo;re Here to Help!" %}</h3>
 
-                        <p>Get in touch with us</p>
+                        <p>{% trans "Get in touch with us" %}</p>
                     </div>
                 </div>
             </div>
@@ -279,7 +302,7 @@
             <div class="container">
                 <div class="row downLine">
                     <div class="col-xs-12 col-md-3 text-left copy">
-                        <p>Copyright &copy; 2015 Neatapps. All Rights Reserved.</p>
+                        <p>Copyright &copy; 2015 Neatapps. {% trans "All Rights Reserved." %}</p>
                     </div>
                     <div class="col-xs-12 col-md-3 copy">
                         <div class="a2a_kit a2a_kit_size_32 text-center a2a_default_style">
@@ -291,11 +314,11 @@
                     </div>
                     <div class="col-xs-12 col-md-6 text-right dm">
                         <ul id="downMenu">
-                            <li class="active"><a href="#home">Home</a></li>
-                            <li><a href="#services">Services</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#project1">Projects</a></li>
-                            <li class="last"><a href="#contact">Contact</a></li>
+                            <li class="active"><a href="#home">{% trans "Home" %}</a></li>
+                            <li><a href="#services">{% trans "Services" %}</a></li>
+                            <li><a href="#about">{% trans "About" %}</a></li>
+                            <li><a href="#project1">{% trans "Projects" %}</a></li>
+                            <li class="last"><a href="#contact">{% trans "Contact" %}</a></li>
                         </ul>
                     </div>
                 </div>
@@ -441,6 +464,12 @@
                         .eq(i).addClass('active');
             }
         });
+
+        if (winTop != 0) {
+            $('.langs').css('display', 'none');
+        } else {
+            $('.langs').css('display', 'block');
+        }
     };
 
     $(document).ready(function(){
@@ -467,10 +496,10 @@
 <script src="{% static "apps/neatapps/src/js/script.js" %}" type="text/javascript"></script>
 
 <a class="btn-up btn_position" id='Top'>
-    <img src="{% static "assets/images/up.png" %}"  title="{% trans "Вверх" %}">
+    <img src="{% static "assets/images/up.png" %}"  title="{% trans "Up" %}">
 </a>
 <a class="btn-down btn_position" id='Bottom'>
-    <img src="{% static "assets/images/down.png" %}" title="{% trans "Вниз" %}" class="img-responsive">
+    <img src="{% static "assets/images/down.png" %}" title="{% trans "Down" %}" class="img-responsive">
 </a>
 <script src="{% static 'assets/js/up-and-down.js' %}" type="text/javascript"></script>
 </body>
