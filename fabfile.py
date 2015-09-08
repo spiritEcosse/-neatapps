@@ -51,7 +51,8 @@ def touch():
     reload tornado script
     :return: None
     """
-    run('touch %s' % TORNADO_SCRIPT)
+    with cd(PROJECT_DIR):
+        run('touch %s' % TORNADO_SCRIPT)
 
 
 def update_requirements():
