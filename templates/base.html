@@ -32,36 +32,36 @@
             <div id="menuF" class="default">
                 <div class="container">
                     <div class="row">
-                        <div class="logo col-md-4">
+                        <div class="logo col-md-2">
                             <div>
                                 <a href="#">
-                                    <img src="{% static 'assets/images/logo.png' %}">
+                                    <img class="img-responsive" src="{% static 'assets/images/logo.png' %}">
                                 </a>
                             </div>
                         </div>
-                        <div class="col-md-8">
-                            <div class="langs text-right">
-                            {% for language in languages %}
-                                <div class="lang pull-right">
-                                    <form action="{% url 'set_language' %}" method="post">
-                                        {% csrf_token %}
-                                        <input name="language" type="hidden" value="{{ language.code }}" />
-                                        <button class="btn {% if language.code == LANGUAGE_CODE %}btn-primary{% else %}btn-default{% endif %}" type="submit">
-                                            {{ language.name_local }}
-                                        </button>
-                                    </form>
-                                </div>
-                            {% endfor %}
-                            </div>
-
+                        <div class="col-md-10">
                             <div class="navmenu text-center">
-                                <ul id="menu">
+                                <ul id="menu" class="pull-right">
                                     <li class="active"><a href="#home">{% trans "Home" %}</a></li>
                                     <li><a href="#services">{% trans "Services" %}</a></li>
                                     <li><a href="#about">{% trans "About" %}</a></li>
                                     <li><a href="#project">{% trans "Projects" %}</a></li>
                                     <li class="last"><a href="#contact">{% trans "Contact" %}</a></li>
                                 </ul>
+
+                                <div class="langs pull-right">
+                                {% for language in languages %}
+                                    <div class="lang pull-right">
+                                        <form action="{% url 'set_language' %}" method="post">
+                                            {% csrf_token %}
+                                            <input name="language" type="hidden" value="{{ language.code }}" />
+                                            <button class="btn {% if language.code == LANGUAGE_CODE %}btn-primary{% else %}btn-default{% endif %}" type="submit">
+                                                {{ language.name_local }}
+                                            </button>
+                                        </form>
+                                    </div>
+                                {% endfor %}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -416,7 +416,6 @@
 <script type="text/javascript">
     jQuery(document).ready(function(){
         jQuery('#menu').slicknav();
-
     });
 </script>
 
@@ -463,12 +462,6 @@
                         .eq(i).addClass('active');
             }
         });
-
-        if (winTop != 0) {
-            $('.langs').css('display', 'none');
-        } else {
-            $('.langs').css('display', 'block');
-        }
     };
 
     $(document).ready(function(){

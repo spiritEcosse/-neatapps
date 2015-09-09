@@ -50,18 +50,17 @@ body{
 .row{
 	outline:1px solid #f00;
 }*/
+
+.lang {
+  margin-left: 10px;
+
+  &:last-child {
+    margin-left: 0;
+  }
+}
 .container {
   .langs {
-    margin-top:10px;
-    overflow: hidden;
-
-    .lang {
-      margin-left: 10px;
-
-      &:last-child {
-        margin-left: 0;
-      }
-    }
+    margin-top:@nav-menu-margin-top - 8px;
   }
 }
 .logo{
@@ -135,7 +134,7 @@ body{
 }
 #menu{
   //margin-top: 33px;
-  margin-top: 74px;
+  margin-top:@nav-menu-margin-top;
   float: right;
 }
 #menu li a{
@@ -2139,4 +2138,8 @@ background: rgba(0,0,0,0);
   @media (max-width: @screen-sm-min) {
     font-size: 30px;
   }
+}
+
+.slicknav_menu .langs {
+  margin-top: 6px;
 }

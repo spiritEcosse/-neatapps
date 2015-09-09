@@ -75,7 +75,8 @@
 		$(menuBar).append($this.btn);		
 		$(settings.prependTo).prepend(menuBar);
 		menuBar.append($this.mobileNav);
-		
+        menuBar.append($('.langs').clone());
+
 		// iterate over structure adding additional structure
 		var items = $this.mobileNav.find('li');
 		$(items).each(function () {

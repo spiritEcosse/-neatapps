@@ -6867,15 +6867,14 @@ body {
 .row{
 	outline:1px solid #f00;
 }*/
-.container .langs {
-  margin-top: 10px;
-  overflow: hidden;
-}
-.container .langs .lang {
+.lang {
   margin-left: 10px;
 }
-.container .langs .lang:last-child {
+.lang:last-child {
   margin-left: 0;
+}
+.container .langs {
+  margin-top: 66px;
 }
 .logo {
   margin-top: 60px;
@@ -8869,4 +8868,7 @@ background: rgba(0,0,0,0);
   .camera_caption h2 {
     font-size: 30px;
   }
+}
+.slicknav_menu .langs {
+  margin-top: 6px;
 }
