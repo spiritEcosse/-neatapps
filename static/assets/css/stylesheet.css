@@ -8816,7 +8816,7 @@ margin-bottom: 35px !important;
   display: none;
   opacity: 0.8;
   /* прозрачность */
-  padding: 0;
+  padding: 15px 10px 10px;
   /* отступы */
   background: #aaa;
   border-radius: 5px;
@@ -8828,14 +8828,14 @@ margin-bottom: 35px !important;
   right: 10px;
 }
 .btn_position img {
-  max-width: 50px;
-  max-height: 50px;
+  max-width: 40px;
+  max-height: 40px;
 }
 .btn-up {
-  bottom: 30px;
+  bottom: 70px;
 }
 .btn-down {
-  bottom: 90px;
+  bottom: 116px;
 }
 #scrollup {
   position: fixed;
