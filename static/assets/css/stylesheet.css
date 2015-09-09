@@ -7522,7 +7522,7 @@ body {
   margin-top: 201px;
   margin-bottom: 133px;
   /*	margin-top: 241px;
-	margin-bottom: 94px;*/
+      margin-bottom: 94px;*/
 }
 @media screen and (min-device-width: 1919px) {
   .Ama {
@@ -7824,7 +7824,7 @@ body {
 }
 .line4 .Ama {
   /*margin-top: 121px;
-	margin-bottom: 94px;*/
+  margin-bottom: 94px;*/
 }
 /**/
 .news {
@@ -7925,7 +7925,7 @@ body {
 }
 .line5 .Ama {
   /*margin-top: 127px;
-	margin-bottom: 94px;*/
+  margin-bottom: 94px;*/
 }
 .line5 {
   position: relative;
@@ -8114,11 +8114,11 @@ textarea {
   filter: grayscale(100%);
 }
 /*
-	filter: url(filters.svg#grayscale);
-	-webkit-filter: grayscale(100%);
-	-o-filter: grayscale(100%);
-	-moz-filter: grayscale(100%);
-	filter: grayscale(100%);*/
+   filter: url(filters.svg#grayscale);
+   -webkit-filter: grayscale(100%);
+   -o-filter: grayscale(100%);
+   -moz-filter: grayscale(100%);
+   filter: grayscale(100%);*/
 .line6 {
   position: relative;
   width: 100%;
@@ -8744,14 +8744,14 @@ margin-bottom: 35px !important;
 .portfolio_block .project:hover .hover_img:before {background-color:rgba(0,0,0,0.38);}
 .portfolio_block .project .hover_img img {opacity:0.92;}
 .portfolio_block .hover_img .zoom {
-	display:block;
-	position:absolute;
-	z-index:100;
-	left:0;
-	top:0;
-	width:100%;
-	height:100%;
-	background: rgba(0,0,0,0);
+display:block;
+position:absolute;
+z-index:100;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background: rgba(0,0,0,0);
 }*/
 .portfolio_block.project_descr {
   position: relative;
@@ -8816,7 +8816,7 @@ margin-bottom: 35px !important;
   display: none;
   opacity: 0.8;
   /* прозрачность */
-  padding: 15px 10px 10px;
+  padding: 0;
   /* отступы */
   background: #aaa;
   border-radius: 5px;
@@ -8828,14 +8828,14 @@ margin-bottom: 35px !important;
   right: 10px;
 }
 .btn_position img {
-  max-width: 40px;
-  max-height: 40px;
+  max-width: 35px;
+  max-height: 35px;
 }
 .btn-up {
-  bottom: 70px;
+  bottom: 60px;
 }
 .btn-down {
-  bottom: 116px;
+  bottom: 121px;
 }
 #scrollup {
   position: fixed;
@@ -8859,4 +8859,14 @@ margin-bottom: 35px !important;
   z-index: 999999;
   max-width: 50px;
   max-height: 50px;
+}
+@media (max-width: 991px) {
+  .camera_caption h2 {
+    font-size: 60px;
+  }
+}
+@media (max-width: 768px) {
+  .camera_caption h2 {
+    font-size: 30px;
+  }
 }
