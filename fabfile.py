@@ -59,6 +59,7 @@ def local_act():
     local("git push origin")
     local("git push production")
     local("git push my_repo_neatapps_bit")
+    local("git push my-production")
 
 
 def update_requirements():
