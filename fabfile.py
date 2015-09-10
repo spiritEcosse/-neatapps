@@ -4,7 +4,7 @@ from fabric.api import local, run, require, cd, settings
 import os
 from neatapps.settings import BASE_DIR
 from fabric.state import env
-env.hosts = ['root@78.24.216.187', 'root@185.65.247.131']
+# env.hosts = ['root@78.24.216.187', 'root@185.65.247.131']
 env.user = 'root'
 env.skip_bad_hosts = True
 env.warn_only = True
@@ -34,8 +34,6 @@ def remote_act():
         with settings(host_string=host):
             with cd(dir_name):
                 run("git reset --hard")
-
-    return None
 
 
 def local_act():
