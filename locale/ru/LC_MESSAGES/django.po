@@ -28,8 +28,8 @@ msgid "Home"
 msgstr "Главная"
 
 #: templates/base.html:61 templates/base.html.py:318
-msgid "Services"
-msgstr "Сервисы"
+msgid "Service"
+msgstr "Сервис"
 
 #: templates/base.html:62 templates/base.html.py:319
 msgid "About"
@@ -37,7 +37,7 @@ msgstr "О нас"
 
 #: templates/base.html:63 templates/base.html.py:320
 msgid "Projects"
-msgstr "Проэкты"
+msgstr "Проекты"
 
 #: templates/base.html:64 templates/base.html.py:321
 msgid "Contact"

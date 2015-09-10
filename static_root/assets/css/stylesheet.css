@@ -7394,7 +7394,7 @@ body {
 .bar {
   margin-top: 32px;
 }
-.bar:hover {
+.bar img:hover {
   background: #DFDFDF;
 }
 /*.bar:first-child{

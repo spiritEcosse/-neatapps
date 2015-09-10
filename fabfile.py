@@ -45,6 +45,7 @@ def local_act():
     activate_env = os.path.expanduser(os.path.join(BASE_DIR, ".env/bin/activate_this.py"))
     execfile(activate_env, dict(__file__=activate_env))
     local("./manage.py test")
+    local("./manage.py compilemessages")
     local("%s%s" % ('pip freeze > ', REQUIREMENTS_FILE))
     local("./manage.py collectstatic -c --noinput")
     local("git add .")
