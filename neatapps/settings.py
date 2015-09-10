@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 from django.utils.translation import ugettext_lazy as _
 import os
+import settings_local
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -24,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '-bl2u41p&cf8%r#r5#eokcr)%u^w0h@d3al(u6utnwt=%mad7('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = settings_local.DEBUG
 
 ALLOWED_HOSTS = []
 
@@ -85,13 +86,13 @@ WSGI_APPLICATION = 'neatapps.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'ENGINE': settings_local.DB_BACKEND,
         # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'neatapps',
-        'USER': 'neatapps',
-        'PASSWORD': '1',
-        'HOST': '',
-        'POST': '',
+        'NAME': settings_local.DB_NAME,
+        'USER': settings_local.DB_USER,
+        'PASSWORD': settings_local.DB_PASSWORD,
+        'HOST': settings_local.DB_HOST,
+        'POST': settings_local.DB_PORT,
     }
 }
 
@@ -131,8 +132,6 @@ LANGUAGES = (
     ('ru', _('Russia')),
     ('en', _('English')),
 )
-
-import settings_local
 
 DEFAULT_FROM_EMAIL = settings_local.DEFAULT_FROM_EMAIL
 EMAIL_COMPANY = settings_local.EMAIL_COMPANY
