@@ -34,6 +34,8 @@ def remote_act():
         with settings(host_string=host):
             with cd(dir_name):
                 run("git reset --hard")
+                run("kill $(ps aux | grep 'python %s/tornado_main.py')" % BASE_DIR, capture=True)
+                run("python %s/tornado_main.py > /dev/null 2>&1 &" % BASE_DIR)
 
 
 def local_act():
