@@ -35,6 +35,8 @@ def remote_act():
             with cd(dir_name):
                 run("git reset --hard")
 
+    return None
+
 
 def local_act():
     """
