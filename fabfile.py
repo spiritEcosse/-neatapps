@@ -1,12 +1,16 @@
 __author__ = 'igor'
 
-from fabric.api import local, run, require, cd
+from fabric.api import local, run, require, cd, settings
 import os
 from neatapps.settings import BASE_DIR
 from fabric.state import env
-env.hosts = ['root@78.24.216.187']
+env.hosts = ['root@78.24.216.187', 'root@185.65.247.131']
 env.user = 'root'
-PROJECT_DIR = '/home/igor/web/www/neatapps'
+env.skip_bad_hosts = True
+env.warn_only = True
+env.parallel = True
+HOSTS = [('root@78.24.216.187', '/home/igor/web/www/neatapps'),
+         ('root@185.65.247.131', '/home/neatapps/web/www/neatapps')]
 REQUIREMENTS_FILE = 'requirements.txt'
 TORNADO_SCRIPT = 'tornado_main.py'
 
@@ -18,6 +22,18 @@ def deploy():
     """
     local_act()
     update_requirements()
+    remote_act()
+
+
+def remote_act():
+    """
+    run remote acts
+    :return: None
+    """
+    for host, dir_name in HOSTS:
+        with settings(host_string=host):
+            with cd(dir_name):
+                run("git reset --hard")
 
 
 def local_act():
@@ -50,5 +66,7 @@ def update_requirements():
     install external requirements on remote host
     :return: None
     """
-    with cd(PROJECT_DIR):
-        run('%s && %s%s' % ('source .env/bin/activate', 'pip install -r ', REQUIREMENTS_FILE))
+    for host, dir_name in HOSTS:
+        with settings(host_string=host):
+            with cd(dir_name):
+                run('%s && %s%s' % ('source .env/bin/activate', 'pip install -r ', REQUIREMENTS_FILE))
