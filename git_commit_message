@@ -1,1 +1,1 @@
-tornado_main debug delete
+tornado_main debug delete, tornado add BASE_DIR
