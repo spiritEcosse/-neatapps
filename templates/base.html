@@ -20,6 +20,7 @@
 
     <link href="{% static "djangular/css/styles.css" %}" rel="stylesheet" />
     <link href="{% static "djangular/css/bootstrap3.css" %}" rel="stylesheet" />
+    <link href="{% static "bower_components/bootstrap-select/dist/css/bootstrap-select.min.css" %}" rel="stylesheet" />
     <link href="{% static 'assets/css/stylesheet.css' %}" rel="stylesheet" type="text/css">
 </head>
 <body >
@@ -31,7 +32,27 @@
         <div class="headerLine">
             <div id="menuF" class="default">
                 <div class="container">
-                    <div class="row">
+                    <div class="row head">
+                        <div class="col-xs-12 langs">
+                            <div class="pull-right">
+                                <div class="btn-group">
+                                    <form action="{% url 'set_language' %}" method="post">
+                                        {% csrf_token %}
+                                        <input name="next" type="hidden" value="{{ redirect_to }}" />
+                                        <select class="selectpicker show-tick" name="language" onchange="this.form.submit();">
+                                            {% get_current_language as LANGUAGE_CODE %}
+                                            {% get_available_languages as LANGUAGES %}
+                                            {% get_language_info_list for LANGUAGES as languages %}
+                                            {% for language in languages %}
+                                                <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
+                                                    {{ language.name_local }} ({{ language.code }})
+                                                </option>
+                                            {% endfor %}
+                                        </select>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                         <div class="logo col-md-2">
                             <div>
                                 <a href="#">
@@ -48,20 +69,6 @@
                                     <li><a href="#project">{% trans "Projects" %}</a></li>
                                     <li class="last"><a href="#contact">{% trans "Contact" %}</a></li>
                                 </ul>
-
-                                <div class="langs pull-right">
-                                {% for language in languages %}
-                                    <div class="lang pull-right">
-                                        <form action="{% url 'set_language' %}" method="post">
-                                            {% csrf_token %}
-                                            <input name="language" type="hidden" value="{{ language.code }}" />
-                                            <button class="btn {% if language.code == LANGUAGE_CODE %}btn-primary{% else %}btn-default{% endif %}" type="submit">
-                                                {{ language.name_local }}
-                                            </button>
-                                        </form>
-                                    </div>
-                                {% endfor %}
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -256,7 +263,7 @@
                         </a>
 
                         <div class="view project_descr center">
-                            <h3><a href="#">{% trans "Mindnotes: notepad with tags and sub-tags!" %}</a></h3>
+                            <h3><a href="https://play.google.com/store/apps/details?id=net.neatapps.mindnotes">{% trans "Mindnotes: notepad with tags and sub-tags!" %}</a></h3>
                             <ul>
                                 <br>
                             </ul>
@@ -354,6 +361,7 @@
 
 <script src="{% static 'assets/js/jquery.prettyPhoto.js' %}" type="text/javascript" charset="utf-8"></script>
 <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'bower_components/bootstrap-select/dist/js/bootstrap-select.min.js' %}" type="text/javascript"></script>
 <script src="{% static 'assets/js/jquery.slicknav.js' %}"></script>
 
 <script>
@@ -425,12 +433,14 @@
 
         $(window).scroll(function(){
             if ( $(this).scrollTop() > 100 && $menu.hasClass("default") ){
+                $('.langs').css('display', 'none');
                 $menu.fadeOut('fast',function(){
                     $(this).removeClass("default")
                             .addClass("fixed transbg")
                             .fadeIn('fast');
                 });
             } else if($(this).scrollTop() <= 100 && $menu.hasClass("fixed")) {
+                $('.langs').css('display', 'block');
                 $menu.fadeOut('fast',function(){
                     $(this).removeClass("fixed transbg")
                             .addClass("default")

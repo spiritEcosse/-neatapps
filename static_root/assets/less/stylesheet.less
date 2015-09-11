@@ -60,7 +60,9 @@ body{
 }
 .container {
   .langs {
-    margin-top:@nav-menu-margin-top - 8px;
+    margin-top:10px;
+    position: absolute;
+    z-index: 99999;
   }
 }
 .logo{
@@ -610,12 +612,6 @@ body{
 }
 .bar{
   margin-top: 32px;
-
-  img {
-    &:hover {
-      background: #DFDFDF;
-    }
-  }
 }
 /*.bar:first-child{
 	padding-left:0;
@@ -2142,6 +2138,6 @@ background: rgba(0,0,0,0);
   }
 }
 
-.slicknav_menu .langs {
-  margin-top: 6px;
+.head {
+  position: relative;
 }

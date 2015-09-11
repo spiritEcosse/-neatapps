@@ -18,6 +18,8 @@ jQuery(document).ready(function(){
         });
     }
 
+    $('.selectpicker').selectpicker();
+
     if (chart.length) {
         centerChartsNr();
         $(window).resize(centerChartsNr);

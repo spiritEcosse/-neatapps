@@ -6874,7 +6874,9 @@ body {
   margin-left: 0;
 }
 .container .langs {
-  margin-top: 66px;
+  margin-top: 10px;
+  position: absolute;
+  z-index: 99999;
 }
 .logo {
   margin-top: 60px;
@@ -7393,9 +7395,6 @@ body {
 }
 .bar {
   margin-top: 32px;
-}
-.bar img:hover {
-  background: #DFDFDF;
 }
 /*.bar:first-child{
 	padding-left:0;
@@ -8869,6 +8868,6 @@ background: rgba(0,0,0,0);
     font-size: 30px;
   }
 }
-.slicknav_menu .langs {
-  margin-top: 6px;
+.head {
+  position: relative;
 }
