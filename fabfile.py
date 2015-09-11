@@ -34,7 +34,7 @@ def remote_act():
     for host, dir_name in HOSTS:
         with settings(host_string=host):
             with cd(dir_name):
-                # run("git reset --hard")
+                run("git reset --hard")
                 run("kill $(pidof python %s/tornado_main.py)")
                 # run("nohup python %s/tornado_main.py >& /dev/null < /dev/null &" % dir_name, pty=False)
                 # run("source %s/.env/bin/activate && python %s/tornado_main.py" % (dir_name, dir_name), pty=False)

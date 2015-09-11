@@ -4,7 +4,7 @@
 # PYTHONPATH=. DJANGO_SETTINGS_MODULE=neatapps.settings tornado_main.py
 
 import os
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "neatapps.settings")
 
 # Activate your virtual env
