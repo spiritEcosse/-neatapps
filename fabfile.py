@@ -10,8 +10,9 @@ env.skip_bad_hosts = True
 env.warn_only = True
 env.parallel = True
 env.shell = "/bin/sh -c"
-HOSTS = [('root@78.24.216.187', '/home/igor/web/www/neatapps'),
-         ('root@185.65.247.131', '/home/neatapps/web/www/neatapps')]
+HOSTS = [
+    # ('root@78.24.216.187', '/home/igor/web/www/neatapps'),
+    ('root@185.65.247.131', '/home/neatapps/web/www/neatapps')]
 REQUIREMENTS_FILE = 'requirements.txt'
 TORNADO_SCRIPT = 'tornado_main.py'
 
@@ -22,7 +23,7 @@ def deploy():
     :return:
     """
     local_act()
-    # update_requirements()
+    update_requirements()
     remote_act()
 
 
@@ -35,10 +36,8 @@ def remote_act():
         with settings(host_string=host):
             with cd(dir_name):
                 run("git reset --hard")
-                run("kill $(pidof python %s/tornado_main.py)")
-                # run("nohup python %s/tornado_main.py >& /dev/null < /dev/null &" % dir_name, pty=False)
-                # run("source %s/.env/bin/activate && python %s/tornado_main.py" % (dir_name, dir_name), pty=False)
-                run("nohup python %s/tornado_main.py > /dev/null 2>&1 &" % dir_name, pty=False)
+                run("kill -9 $(pidof python %s/%s)" % dir_name, TORNADO_SCRIPT)
+                run("nohup python %s/%s > /dev/null 2>&1 &" % (dir_name, TORNADO_SCRIPT, ), pty=False)
 
 
 def local_act():
@@ -52,7 +51,7 @@ def local_act():
     local("./manage.py test")
     local("./manage.py compilemessages")
     local("%s%s" % ('pip freeze > ', REQUIREMENTS_FILE))
-    # local("./manage.py collectstatic -c --noinput")
+    local("./manage.py collectstatic -c --noinput")
     local("git add .")
     local("git commit -a -F git_commit_message")
     current_branch = local("git symbolic-ref --short -q HEAD", capture=True)

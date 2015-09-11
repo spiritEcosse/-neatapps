@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-08 15:08+0000\n"
+"POT-Creation-Date: 2015-09-11 13:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,11 +31,15 @@ msgstr "Email"
 msgid "Message"
 msgstr "Сообщение"
 
-#: neatapps/settings.py:131
+#: neatapps/forms.py:12
+msgid "Enter message."
+msgstr "Введите сообщение."
+
+#: neatapps/settings.py:132
 msgid "Russia"
 msgstr "Россия"
 
-#: neatapps/settings.py:132
+#: neatapps/settings.py:133
 msgid "English"
 msgstr "English"
 
