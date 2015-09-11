@@ -7395,6 +7395,11 @@ body {
 }
 .bar {
   margin-top: 32px;
+  display: inline-block;
+}
+.bar .middle,
+.bar .textP h3 {
+  display: inline-block;
 }
 /*.bar:first-child{
 	padding-left:0;
