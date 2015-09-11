@@ -24,7 +24,7 @@ def deploy():
     """
     local_act()
     update_requirements()
-    remote_ac   t()
+    remote_act()
 
 
 def remote_act():
@@ -35,7 +35,7 @@ def remote_act():
     for host, dir_name in HOSTS:
         with settings(host_string=host):
             with cd(dir_name):
-                run("git reset --hard")
+                # run("git reset --hard")
                 run("kill -9 $(pidof python %s/%s)" % (dir_name, TORNADO_SCRIPT, ))
                 run("nohup python %s/%s > /dev/null 2>&1 &" % (dir_name, TORNADO_SCRIPT, ), pty=False)
 
