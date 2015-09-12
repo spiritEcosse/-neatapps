@@ -318,14 +318,24 @@
                             <a class="a2a_dd" href="https://www.addtoany.com/share_save"></a>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-md-6 text-right dm">
-                        <ul id="downMenu">
-                            <li class="active"><a href="#home">{% trans "Home" %}</a></li>
-                            <li><a href="#services">{% trans "Service" %}</a></li>
-                            <li><a href="#about">{% trans "About" %}</a></li>
-                            <li><a href="#project1">{% trans "Projects" %}</a></li>
-                            <li class="last"><a href="#contact">{% trans "Contact" %}</a></li>
-                        </ul>
+                    <div class="col-xs-12 col-md-6 text-left dm">
+                        <div class="row" id="downMenu">
+                            <div class="col-xs-4 col-sm-2 active">
+                                <a href="#home">{% trans "Home" %}</a>
+                            </div>
+                            <div class="col-xs-4 col-sm-2">
+                                <a href="#services">{% trans "Service" %}</a>
+                            </div>
+                            <div class="col-xs-4 col-sm-2">
+                                <a href="#about">{% trans "About" %}</a>
+                            </div>
+                            <div class="col-xs-4 col-sm-2">
+                                <a href="#project1">{% trans "Projects" %}</a>
+                            </div>
+                            <div class="col-xs-4 col-sm-2 last">
+                                <a href="#contact">{% trans "Contact" %}</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -497,12 +507,8 @@
 <script src="{% static 'client/src/js/ng-django-forms.js' %}" type="text/javascript"></script>
 <script src="{% static "apps/neatapps/src/js/script.js" %}" type="text/javascript"></script>
 
-<a class="btn-up btn_position" id='Top'>
-    <img src="{% static "assets/images/up.png" %}"  title="{% trans "Up" %}">
-</a>
-<a class="btn-down btn_position" id='Bottom'>
-    <img src="{% static "assets/images/down.png" %}" title="{% trans "Down" %}" class="img-responsive">
-</a>
+<a id='Top' class="btn-up btn_position" title="{% trans "Up" %}"></a>
+<a class="btn-down btn_position" id='Bottom' title="{% trans "Down" %}"></a>
 <script src="{% static 'assets/js/up-and-down.js' %}" type="text/javascript"></script>
 </body>
 </html>

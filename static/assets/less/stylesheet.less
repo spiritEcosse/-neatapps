@@ -58,12 +58,10 @@ body{
     margin-left: 0;
   }
 }
-.container {
-  .langs {
-    margin-top:10px;
-    position: absolute;
-    z-index: 99999;
-  }
+.langs {
+  margin-top:10px;
+  position: absolute;
+  z-index: 99999;
 }
 .logo{
   margin-top: 60px;
@@ -1811,17 +1809,23 @@ textarea {
 }
 #downMenu{
   float:right;
+  @media (max-width: @screen-xs-max) {
+    float: left;
+  }
+
+  @media (max-width: @screen-sm-max) {
+    float: none;
+  }
 }
-#downMenu li{
-  height: 16px;
+#downMenu > div {
+  height: 22px;
   border-right:1px solid #343434;
   float:left;
-  list-style: none;
 }
-#downMenu li:last-child{
+#downMenu > div:last-child{
   border-right:none;
 }
-#downMenu li a{
+#downMenu > div a{
   padding: 15px;
   text-decoration: none;
   font-size: 13px;
@@ -1831,10 +1835,10 @@ textarea {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-#downMenu li:last-child a{
+#downMenu > div:last-child a{
   padding-right:0;
 }
-#downMenu li a:hover{
+#downMenu > div a:hover, #downMenu > div.active a {
   color:#6d6d6d;
 }
 .downLine input{
@@ -2095,16 +2099,20 @@ background: rgba(0,0,0,0);
 
 .btn_position {
   cursor: pointer;
-  display: none;
-  opacity: 0.8; /* прозрачность */
+  opacity: 0.2; /* прозрачность */
   padding: 0; /* отступы */
-  background: #aaa;
-  border-radius: 5px; /* скругление углов */
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
+  border-radius: 16px; /* скругление углов */
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
   z-index: 999999;
   position: fixed;
   right: 10px;
+  width: 32px;
+  height: 32px;
+
+  &:hover {
+    opacity: 0.7;
+  }
 
   img {
     max-width: 35px;
@@ -2112,10 +2120,12 @@ background: rgba(0,0,0,0);
   }
 }
 .btn-up {
-  bottom: 60px;
+  bottom: 66px;
+  background: url('../images/fixed-panel-elements.png') 0 0 no-repeat;
 }
 .btn-down {
-  bottom: 121px;
+  bottom: 105px;
+  background: url('../images/fixed-panel-elements.png') -100px -2px no-repeat;
 }
 #scrollup {
   position: fixed; /* фиксированная позиция */

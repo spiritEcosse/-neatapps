@@ -75,6 +75,9 @@
 		$(menuBar).append($this.btn);		
 		$(settings.prependTo).prepend(menuBar);
 		menuBar.append($this.mobileNav);
+        var head = $('<div class="row head"></div>').append($('.langs'));
+        var container = $('<div class="container"></div>').append(head);
+        $('#home .headerLine').prepend(container);
 
 		// iterate over structure adding additional structure
 		var items = $this.mobileNav.find('li');
