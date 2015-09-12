@@ -51,7 +51,7 @@ def local_act():
     local("./manage.py test")
     local("./manage.py compilemessages")
     local("%s%s" % ('pip freeze > ', REQUIREMENTS_FILE))
-    local("./manage.py collectstatic -c --noinput")
+    local("./manage.py collectstatic --noinput")
     local("git add .")
     local("git commit -a -F git_commit_message")
     current_branch = local("git symbolic-ref --short -q HEAD", capture=True)
