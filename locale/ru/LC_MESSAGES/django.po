@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-11 14:24+0000\n"
+"POT-Creation-Date: 2015-09-12 13:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,13 +27,19 @@ msgstr "Имя"
 msgid "Email"
 msgstr "Email"
 
+#: neatapps/forms.py:10
+msgid "Please enter your email."
+msgstr "Пожалуйста введите емайл."
+
 #: neatapps/forms.py:11
 msgid "Message"
 msgstr "Сообщение"
 
 #: neatapps/forms.py:12
-msgid "Enter message."
-msgstr "Введите сообщение."
+#, fuzzy
+#| msgid "Enter message."
+msgid "Please enter your message."
+msgstr "Пожалуйста введите сообщение."
 
 #: neatapps/settings.py:132
 msgid "Russia"
@@ -52,75 +58,75 @@ msgstr "Вы получили письмо c сайта %s"
 msgid "Neatapps – software development company"
 msgstr "Neatapps - компания разработки программного обеспечения"
 
-#: templates/base.html:45 templates/base.html.py:316
+#: templates/base.html:66 templates/base.html.py:324
 msgid "Home"
 msgstr "Главная"
 
-#: templates/base.html:46 templates/base.html.py:317
+#: templates/base.html:67 templates/base.html.py:327
 msgid "Service"
 msgstr "Сервис"
 
-#: templates/base.html:47 templates/base.html.py:318
+#: templates/base.html:68 templates/base.html.py:330
 msgid "About"
 msgstr "О нас"
 
-#: templates/base.html:48 templates/base.html.py:319
+#: templates/base.html:69 templates/base.html.py:333
 msgid "Projects"
 msgstr "Проекты"
 
-#: templates/base.html:49 templates/base.html.py:320
+#: templates/base.html:70 templates/base.html.py:336
 msgid "Contact"
 msgstr "Контакты"
 
-#: templates/base.html:76
+#: templates/base.html:83
 msgid "We listen"
 msgstr "Мы слушаем"
 
-#: templates/base.html:81
+#: templates/base.html:88
 msgid "We discuss"
 msgstr "Мы обсуждаем"
 
-#: templates/base.html:86
+#: templates/base.html:93
 msgid "We develop"
 msgstr "Мы разрабатываем"
 
-#: templates/base.html:102
+#: templates/base.html:109
 msgid "Just neat applications"
 msgstr "Просто аккуратные приложения"
 
-#: templates/base.html:103
+#: templates/base.html:110
 msgid "Applications for everyone and elegant solution for your business."
 msgstr "Приложения для всех и элегантное решение для Вашего бизнеса."
 
-#: templates/base.html:152
+#: templates/base.html:159
 msgid "Fresh & Clean Design"
 msgstr "Свежий и Чистый дизайн"
 
-#: templates/base.html:159
+#: templates/base.html:166
 msgid "User Oriented"
 msgstr "Пользователь ориентированное"
 
-#: templates/base.html:162
+#: templates/base.html:169
 msgid "Nothing unnecessary. "
 msgstr "Ничего лишнего."
 
-#: templates/base.html:163
+#: templates/base.html:170
 msgid "Just what user need."
 msgstr "Только то, что нужно пользователю."
 
-#: templates/base.html:169
+#: templates/base.html:176
 msgid "Native Platform Development"
 msgstr "Разработка встроенной платформы"
 
-#: templates/base.html:171
+#: templates/base.html:178
 msgid "It works fast and reliably."
 msgstr "Это работает быстро и надежно."
 
-#: templates/base.html:181
+#: templates/base.html:188
 msgid "Who We Are?"
 msgstr "Кто мы ?"
 
-#: templates/base.html:182
+#: templates/base.html:189
 msgid ""
 "Neatapps is a team of dedicated software developers. We love to create neat "
 "software products."
@@ -128,7 +134,7 @@ msgstr ""
 "Neatapps это команда специализированных разработчиков программного "
 "обеспечения. Мы любим создать аккуратные приложения."
 
-#: templates/base.html:184
+#: templates/base.html:191
 msgid ""
 "We listen, we discuss and develop. We love to learn and use the latest "
 "technologies."
@@ -136,42 +142,42 @@ msgstr ""
 "Мы выслушаем, мы обсудим и разработаем. Мы любим учиться и использовать "
 "новейшие технологии."
 
-#: templates/base.html:211
+#: templates/base.html:218
 msgid "Our Amazing Works"
 msgstr "Наши удивительные работы"
 
-#: templates/base.html:223
+#: templates/base.html:230
 msgid "All Works"
 msgstr "Все работы"
 
-#: templates/base.html:237 templates/base.html.py:244
+#: templates/base.html:244 templates/base.html.py:251
 msgid "Breathing exercises: Anuloma Viloma"
 msgstr "Дыхательные упражнения: Anuloma Viloma"
 
-#: templates/base.html:255 templates/base.html.py:259
+#: templates/base.html:262 templates/base.html.py:266
 msgid "Mindnotes: notepad with tags and sub-tags!"
 msgstr "Mindnotes: блокнот с тегами и под-тегами!"
 
-#: templates/base.html:277
+#: templates/base.html:284
 msgid "Got a Question? We&rsquo;re Here to Help!"
 msgstr "Есть вопрос? Мы здесь, чтобы помочь!"
 
-#: templates/base.html:279
+#: templates/base.html:286
 msgid "Get in touch with us"
 msgstr "Свяжитесь с нами"
 
-#: templates/base.html:293
+#: templates/base.html:300
 msgid "Send Message"
 msgstr "Отправить сообщение"
 
-#: templates/base.html:304
+#: templates/base.html:311
 msgid "All Rights Reserved."
 msgstr "Все права защищены."
 
-#: templates/base.html:491
+#: templates/base.html:510
 msgid "Up"
 msgstr "Вверх"
 
-#: templates/base.html:494
+#: templates/base.html:511
 msgid "Down"
 msgstr "Вниз"
