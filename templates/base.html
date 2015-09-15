@@ -490,7 +490,13 @@
             calculateScroll();
         });
         $('.navmenu ul li a').click(function() {
-            $('html, body').animate({scrollTop: $(this.hash).offset().top - 80}, 800);
+            var height_menuF = 0;
+
+            if ($('#menuF').attr('class') == 'default') {
+                height_menuF = $('#menuF').height();
+            }
+
+            $('html, body').animate({scrollTop: $(this.hash).offset().top - 80 - height_menuF}, 800);
             return false;
         });
     });

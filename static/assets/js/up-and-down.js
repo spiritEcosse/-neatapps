@@ -19,7 +19,13 @@ jQuery(function(){
     })
     $("#Bottom").click(function(){
         if ($('.navmenu li.active').next().index() != -1) {
-            $("html, body").animate({scrollTop: $($('.navmenu li.active').next().find('a').attr('href')).offset().top}, "slow");
+            var height_menuF = 0;
+
+            if ($('#menuF').attr('class') == 'default') {
+                height_menuF = $('#menuF').height();
+            }
+
+            $("html, body").animate({scrollTop: $($('.navmenu li.active').next().find('a').attr('href')).offset().top - 80 - height_menuF}, "slow");
         } else {
             $("html, body").animate({scrollTop:$(document).height()},"slow")
         }
