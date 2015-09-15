@@ -14,9 +14,14 @@ jQuery(function(){
     });
 
     $("#Top").click(function(){
-        $("html, body").animate({scrollTop:0},"slow")
+        $("html, body").animate({scrollTop:0},"slow");
+        $($('.navmenu li.active a').attr('href')).next();
     })
     $("#Bottom").click(function(){
-        $("html, body").animate({scrollTop:$(document).height()},"slow")
-    })
+        if ($('.navmenu li.active').next().index() != -1) {
+            $("html, body").animate({scrollTop: $($('.navmenu li.active').next().find('a').attr('href')).offset().top}, "slow");
+        } else {
+            $("html, body").animate({scrollTop:$(document).height()},"slow")
+        }
+    });
 });
