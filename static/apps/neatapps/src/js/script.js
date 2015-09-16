@@ -32,7 +32,7 @@
       return $scope.submit = function() {
         if ($scope.feedback) {
           $http.post(".", $scope.feedback).success(function(data) {
-            if (!djangoForm.setErrors($scope.feedback, data.errors)) {
+            if (!djangoForm.setErrors($scope.form_comment, data.errors)) {
               return $window.location.href = out_data.success_url;
             }
           }).error(function() {
