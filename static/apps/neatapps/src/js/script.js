@@ -36,7 +36,6 @@
       };
       return $scope.submit = function() {
         $scope.disabled = true;
-        return false;
         if ($scope.feedback) {
           $http.post(".", $scope.feedback).success(function(data) {
             var duration, offset, someElement;

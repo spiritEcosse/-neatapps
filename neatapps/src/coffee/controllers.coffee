@@ -13,7 +13,6 @@ app.controller 'MyFormCtrl', ['$http', '$scope', '$window', 'djangoForm', '$docu
 
   $scope.submit = ->
     $scope.disabled = true
-    return false
 
     if $scope.feedback
       $http.post(".", $scope.feedback).success (data) ->
