@@ -36,11 +36,12 @@
       };
       return $scope.submit = function() {
         $scope.disabled = true;
+        return false;
         if ($scope.feedback) {
           $http.post(".", $scope.feedback).success(function(data) {
             var duration, offset, someElement;
             if (!djangoForm.setErrors($scope.form_comment, data.errors)) {
-              duration = 2000;
+              duration = 800;
               offset = 100;
               $scope.alerts.push({
                 msg: data.msg,

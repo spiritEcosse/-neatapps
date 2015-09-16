@@ -13,11 +13,12 @@ app.controller 'MyFormCtrl', ['$http', '$scope', '$window', 'djangoForm', '$docu
 
   $scope.submit = ->
     $scope.disabled = true
+    return false
 
     if $scope.feedback
       $http.post(".", $scope.feedback).success (data) ->
         if not djangoForm.setErrors($scope.form_comment, data.errors)
-          duration = 2000
+          duration = 800
           offset = 100
           $scope.alerts.push({msg: data.msg, type: 'success'})
           someElement = angular.element(document.getElementById('alerts'));
