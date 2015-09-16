@@ -31,5 +31,5 @@ class IndexView(FormView):
             send_mail(_('You received a letter from the site %s') % (request.META['HTTP_HOST'],),
                       form.cleaned_data['comment'], form.cleaned_data['email'], [EMAIL_COMPANY],
                       fail_silently=False)
-            response_data['msg'] = unicode(_('You sent a message!'))
+            response_data['msg'] = unicode(_('Your message sent!'))
         return HttpResponse(json.dumps(response_data), content_type="application/json")
