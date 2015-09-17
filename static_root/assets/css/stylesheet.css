@@ -6845,6 +6845,25 @@ body {
   -o-background-size: cover;
   background-size: cover;
 }
+.headerLine .container {
+  z-index: 4;
+  position: relative;
+}
+.headerLine .default {
+  z-index: 4;
+  position: relative;
+}
+.pattern-overlay {
+  background-image: url(../images/overlay-pattern.png);
+  background-repeat: repeat;
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  display: block;
+}
 .headerLine:after {
   content: "";
   position: absolute;
