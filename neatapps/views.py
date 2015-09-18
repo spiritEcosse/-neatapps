@@ -9,7 +9,7 @@ from django.http import HttpResponse
 import json
 
 
-class FeedbackForm(NgModelFormMixin, NgFormValidationMixin, Feedback):
+class FeedbackForm(NgModelFormMixin, Feedback):
     scope_prefix = 'feedback'
     form_name = 'form_comment'
 
