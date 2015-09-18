@@ -4,12 +4,12 @@ from neatapps.settings import EMAIL_COMPANY
 from django.views.generic import FormView
 from forms import Feedback
 from django.utils.translation import ugettext_lazy as _
-from djangular.forms import NgModelFormMixin
+from djangular.forms import NgModelFormMixin, NgFormValidationMixin
 from django.http import HttpResponse
 import json
 
 
-class FeedbackForm(NgModelFormMixin, Feedback):
+class FeedbackForm(NgModelFormMixin, NgFormValidationMixin, Feedback):
     scope_prefix = 'feedback'
     form_name = 'form_comment'
 
@@ -28,7 +28,8 @@ class IndexView(FormView):
         response_data = {'errors': form.errors}
 
         if not form.errors:
-            send_mail(_('You received a letter from the site %s') % (request.META['HTTP_HOST'],),
+            send_mail(_('You received a letter from the site %s from %s') %
+                      (request.META['HTTP_HOST'], form.cleaned_data['name']),
                       form.cleaned_data['comment'], form.cleaned_data['email'], [EMAIL_COMPANY],
                       fail_silently=False)
             response_data['msg'] = unicode(_('Your message sent!'))
