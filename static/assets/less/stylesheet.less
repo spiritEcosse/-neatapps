@@ -83,17 +83,24 @@ body{
 	outline:1px solid #f00;
 }*/
 
-.lang {
-  margin-left: 10px;
-
-  &:last-child {
-    margin-left: 0;
-  }
+.lang-hide {
+  display: none;
 }
 .langs {
   margin-top:10px;
   position: absolute;
   z-index: 99999;
+
+  .btn {
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 19px;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 .logo{
   margin-top: 60px;
@@ -2316,4 +2323,19 @@ background: rgba(0,0,0,0);
 
 .head {
   position: relative;
+}
+.lang {
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 17px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+.color-default {
+  color: @btn-default-color;
+}
+.color-primary {
+  color: @btn-primary-color;
 }

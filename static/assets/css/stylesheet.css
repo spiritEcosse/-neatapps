@@ -3018,7 +3018,7 @@ select[multiple].input-lg {
 .btn:hover,
 .btn:focus,
 .btn.focus {
-  color: #333333;
+  color: white;
   text-decoration: none;
 }
 .btn:active,
@@ -3042,25 +3042,25 @@ fieldset[disabled] a.btn {
   pointer-events: none;
 }
 .btn-default {
-  color: #333333;
+  color: white;
   background-color: #ffffff;
   border-color: #cccccc;
 }
 .btn-default:focus,
 .btn-default.focus {
-  color: #333333;
+  color: white;
   background-color: #e6e6e6;
   border-color: #8c8c8c;
 }
 .btn-default:hover {
-  color: #333333;
+  color: white;
   background-color: #e6e6e6;
   border-color: #adadad;
 }
 .btn-default:active,
 .btn-default.active,
 .open > .dropdown-toggle.btn-default {
-  color: #333333;
+  color: white;
   background-color: #e6e6e6;
   border-color: #adadad;
 }
@@ -3073,7 +3073,7 @@ fieldset[disabled] a.btn {
 .btn-default:active.focus,
 .btn-default.active.focus,
 .open > .dropdown-toggle.btn-default.focus {
-  color: #333333;
+  color: white;
   background-color: #d4d4d4;
   border-color: #8c8c8c;
 }
@@ -3105,28 +3105,28 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-default .badge {
   color: #ffffff;
-  background-color: #333333;
+  background-color: white;
 }
 .btn-primary {
-  color: #ffffff;
+  color: #1fcdff;
   background-color: #1fcdff;
   border-color: #05c7ff;
 }
 .btn-primary:focus,
 .btn-primary.focus {
-  color: #ffffff;
+  color: #1fcdff;
   background-color: #00b7eb;
   border-color: #006785;
 }
 .btn-primary:hover {
-  color: #ffffff;
+  color: #1fcdff;
   background-color: #00b7eb;
   border-color: #009bc7;
 }
 .btn-primary:active,
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
-  color: #ffffff;
+  color: #1fcdff;
   background-color: #00b7eb;
   border-color: #009bc7;
 }
@@ -3139,7 +3139,7 @@ fieldset[disabled] .btn-default.active {
 .btn-primary:active.focus,
 .btn-primary.active.focus,
 .open > .dropdown-toggle.btn-primary.focus {
-  color: #ffffff;
+  color: #1fcdff;
   background-color: #009bc7;
   border-color: #006785;
 }
@@ -3171,7 +3171,7 @@ fieldset[disabled] .btn-primary.active {
 }
 .btn-primary .badge {
   color: #1fcdff;
-  background-color: #ffffff;
+  background-color: #1fcdff;
 }
 .btn-success {
   color: #ffffff;
@@ -6896,16 +6896,22 @@ body {
 .row{
 	outline:1px solid #f00;
 }*/
-.lang {
-  margin-left: 10px;
-}
-.lang:last-child {
-  margin-left: 0;
+.lang-hide {
+  display: none;
 }
 .langs {
   margin-top: 10px;
   position: absolute;
   z-index: 99999;
+}
+.langs .btn {
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 19px;
+  cursor: pointer;
+}
+.langs .btn:hover {
+  text-decoration: none;
 }
 .logo {
   margin-top: 60px;
@@ -9039,4 +9045,18 @@ background: rgba(0,0,0,0);
 }
 .head {
   position: relative;
+}
+.lang {
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 17px;
+}
+.lang:last-child {
+  margin-right: 0;
+}
+.color-default {
+  color: white;
+}
+.color-primary {
+  color: #1fcdff;
 }

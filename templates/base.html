@@ -39,26 +39,31 @@
                         <div class="col-xs-12 langs">
                             <div class="pull-right">
                                 <div class="btn-group">
-                                    <form action="{% url 'set_language' %}" method="post">
-                                        {% csrf_token %}
-                                        <input name="next" type="hidden" value="{{ redirect_to }}" />
-                                        <select data-width="100%" class="selectpicker show-tick" name="language" onchange="this.form.submit();">
-                                            {% get_current_language as LANGUAGE_CODE %}
-                                            {% get_available_languages as LANGUAGES %}
-                                            {% get_language_info_list for LANGUAGES as languages %}
+                                    {% get_current_language as LANGUAGE_CODE %}
+                                    {% get_available_languages as LANGUAGES %}
+                                    {% get_language_info_list for LANGUAGES as languages %}
+
+                                    <div class="lang-show pull-left">
+                                        <div class="lang-hide pull-left">
                                             {% for language in languages %}
-                                                <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
-                                                    {{ language.name_local }} ({{ language.code }})
-                                                </option>
+                                                {% if language.code != LANGUAGE_CODE %}
+                                                    <form class="pull-right lang" action="{% url 'set_language' %}" method="post">
+                                                        {% csrf_token %}
+                                                        <input name="language" type="hidden" value="{{ language.code }}">
+                                                        <button type="submit" class="btn btn-link color-default">{{ language.code }}</button>
+                                                    </form>
+                                                {% endif %}
                                             {% endfor %}
-                                        </select>
-                                    </form>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-link color-primary">{{ LANGUAGE_CODE }}</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="logo col-md-2">
                             <div>
-                                <a href="#">
+                                <a href="/">
                                     <img class="img-responsive" src="{% static 'assets/images/logo.png' %}">
                                 </a>
                             </div>
@@ -406,6 +411,14 @@
 
 <script>
     $(document).ready(function(){
+        $(document).ready(function(){
+            $(".lang-show").hover(
+                    function() {
+                        $(".lang-hide").toggle('show');
+                    }
+            );
+        })
+
         $(".bhide").click(function(){
             $(".hideObj").slideDown();
             $(this).hide(); //.attr()
