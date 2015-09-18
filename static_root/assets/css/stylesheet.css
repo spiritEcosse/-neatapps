@@ -3018,7 +3018,7 @@ select[multiple].input-lg {
 .btn:hover,
 .btn:focus,
 .btn.focus {
-  color: white;
+  color: #333333;
   text-decoration: none;
 }
 .btn:active,
@@ -3042,25 +3042,25 @@ fieldset[disabled] a.btn {
   pointer-events: none;
 }
 .btn-default {
-  color: white;
+  color: #333333;
   background-color: #ffffff;
   border-color: #cccccc;
 }
 .btn-default:focus,
 .btn-default.focus {
-  color: white;
+  color: #333333;
   background-color: #e6e6e6;
   border-color: #8c8c8c;
 }
 .btn-default:hover {
-  color: white;
+  color: #333333;
   background-color: #e6e6e6;
   border-color: #adadad;
 }
 .btn-default:active,
 .btn-default.active,
 .open > .dropdown-toggle.btn-default {
-  color: white;
+  color: #333333;
   background-color: #e6e6e6;
   border-color: #adadad;
 }
@@ -3073,7 +3073,7 @@ fieldset[disabled] a.btn {
 .btn-default:active.focus,
 .btn-default.active.focus,
 .open > .dropdown-toggle.btn-default.focus {
-  color: white;
+  color: #333333;
   background-color: #d4d4d4;
   border-color: #8c8c8c;
 }
@@ -3105,28 +3105,28 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-default .badge {
   color: #ffffff;
-  background-color: white;
+  background-color: #333333;
 }
 .btn-primary {
-  color: #1fcdff;
+  color: #ffffff;
   background-color: #1fcdff;
   border-color: #05c7ff;
 }
 .btn-primary:focus,
 .btn-primary.focus {
-  color: #1fcdff;
+  color: #ffffff;
   background-color: #00b7eb;
   border-color: #006785;
 }
 .btn-primary:hover {
-  color: #1fcdff;
+  color: #ffffff;
   background-color: #00b7eb;
   border-color: #009bc7;
 }
 .btn-primary:active,
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
-  color: #1fcdff;
+  color: #ffffff;
   background-color: #00b7eb;
   border-color: #009bc7;
 }
@@ -3139,7 +3139,7 @@ fieldset[disabled] .btn-default.active {
 .btn-primary:active.focus,
 .btn-primary.active.focus,
 .open > .dropdown-toggle.btn-primary.focus {
-  color: #1fcdff;
+  color: #ffffff;
   background-color: #009bc7;
   border-color: #006785;
 }
@@ -3171,7 +3171,7 @@ fieldset[disabled] .btn-primary.active {
 }
 .btn-primary .badge {
   color: #1fcdff;
-  background-color: #1fcdff;
+  background-color: #ffffff;
 }
 .btn-success {
   color: #ffffff;
