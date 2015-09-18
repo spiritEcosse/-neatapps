@@ -29,7 +29,7 @@ body{
   background-size: cover;
 
   .container {
-    z-index: 4;
+    z-index: 13;
     position: relative;
   }
 
@@ -50,15 +50,15 @@ body{
   }
 }
 .pattern-overlay {
-    background-image: url(../images/overlay-pattern.png);
-    background-repeat: repeat;
-    height: 100%;
-    left: 0;
-    top: 0;
-    width: 100%;
-    position: absolute;
-    z-index: 1;
-    display: block;
+  background-image: url(../images/overlay-pattern.png);
+  background-repeat: repeat;
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  display: block;
 }
 .headerLine:after{
   content: "";
@@ -382,6 +382,8 @@ body{
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+
+  .pattern-overlay {  }
 }
 .line2:after{
   content: "";

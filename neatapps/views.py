@@ -4,12 +4,12 @@ from neatapps.settings import EMAIL_COMPANY
 from django.views.generic import FormView
 from forms import Feedback
 from django.utils.translation import ugettext_lazy as _
-from djangular.forms import NgFormValidationMixin, NgModelFormMixin
+from djangular.forms import NgModelFormMixin
 from django.http import HttpResponse
 import json
 
 
-class FeedbackForm(NgModelFormMixin, NgFormValidationMixin, Feedback):
+class FeedbackForm(NgModelFormMixin, Feedback):
     scope_prefix = 'feedback'
     form_name = 'form_comment'
 
