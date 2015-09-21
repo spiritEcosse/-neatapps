@@ -28,9 +28,9 @@ class IndexView(FormView):
         response_data = {'errors': form.errors}
 
         if not form.errors:
-            send_mail(_('You received a letter from the site %s from %s') %
-                      (request.META['HTTP_HOST'], form.cleaned_data['name']),
-                      form.cleaned_data['comment'], form.cleaned_data['email'], [EMAIL_COMPANY],
+            send_mail(_('You received a letter from the site %s') % request.META['HTTP_HOST'],
+                      'Email: %s.\nComment: %s' % (form.cleaned_data['email'], form.cleaned_data['comment']),
+                      form.cleaned_data['email'], [EMAIL_COMPANY],
                       fail_silently=False)
             response_data['msg'] = unicode(_('Your message sent!'))
         return HttpResponse(json.dumps(response_data), content_type="application/json")
