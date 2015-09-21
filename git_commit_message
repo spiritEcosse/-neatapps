@@ -1,1 +1,1 @@
-send main without smtp authorisation
+send main with smtplib
