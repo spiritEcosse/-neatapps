@@ -1,1 +1,1 @@
-send main with smtplib
+send mail with smtp

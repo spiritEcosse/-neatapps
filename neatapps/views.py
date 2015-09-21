@@ -7,7 +7,6 @@ from django.utils.translation import ugettext_lazy as _
 from djangular.forms import NgModelFormMixin, NgFormValidationMixin
 from django.http import HttpResponse
 import json
-import smtplib
 
 
 class FeedbackForm(NgModelFormMixin, Feedback):
@@ -29,9 +28,9 @@ class IndexView(FormView):
         response_data = {'errors': form.errors}
 
         if not form.errors:
-            message = _('You received a letter from the site %s from %s') % \
-                      (request.META['HTTP_HOST'], form.cleaned_data['name'])
-            sender = smtplib.SMTP('localhost')
-            sender.sendmail(form.cleaned_data['email'], EMAIL_COMPANY, message)
+            send_mail(_('You received a letter from the site %s from %s') %
+                      (request.META['HTTP_HOST'], form.cleaned_data['name']),
+                      form.cleaned_data['comment'], form.cleaned_data['email'], [EMAIL_COMPANY],
+                      fail_silently=False)
             response_data['msg'] = unicode(_('Your message sent!'))
         return HttpResponse(json.dumps(response_data), content_type="application/json")
