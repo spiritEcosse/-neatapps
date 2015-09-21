@@ -29,7 +29,7 @@ class IndexView(FormView):
 
         if not form.errors:
             send_mail(_('You received a letter from the site %s') % request.META['HTTP_HOST'],
-                      'Email: %s.\nComment: %s' % (form.cleaned_data['email'], form.cleaned_data['comment']),
+                      'Email: %s .\nComment: %s' % (form.cleaned_data['email'], form.cleaned_data['comment']),
                       form.cleaned_data['email'], [EMAIL_COMPANY],
                       fail_silently=False)
             response_data['msg'] = unicode(_('Your message sent!'))

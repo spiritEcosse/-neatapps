@@ -139,4 +139,4 @@ EMAIL_HOST_USER = settings_local.EMAIL_HOST_USER
 EMAIL_HOST_PASSWORD = settings_local.EMAIL_HOST_PASSWORD
 EMAIL_HOST = settings_local.EMAIL_HOST
 EMAIL_PORT = settings_local.EMAIL_PORT
-EMAIL_USE_SSL = settings_local.EMAIL_USE_SSL
+EMAIL_USE_TLS = settings_local.EMAIL_USE_TLS
