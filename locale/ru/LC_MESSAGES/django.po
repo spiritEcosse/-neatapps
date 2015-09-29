@@ -25,11 +25,11 @@ msgstr "Имя"
 
 #: neatapps/forms.py:12
 msgid "Email"
-msgstr "Адрес электронной почты"
+msgstr "Электронная почта"
 
 #: neatapps/forms.py:13
 msgid "Please enter your email."
-msgstr "Пожалуйста, введите ваш адрес электронной почты."
+msgstr "Пожалуйста, введите Вашу электронную почту."
 
 #: neatapps/forms.py:16
 msgid "Message"
@@ -37,7 +37,7 @@ msgstr "Сообщение"
 
 #: neatapps/forms.py:17
 msgid "Please enter your message."
-msgstr "Пожалуйста, введите ваше сообщение."
+msgstr "Пожалуйста, введите Ваше сообщение."
 
 #: neatapps/settings.py:132
 msgid "Russia"
