@@ -81,20 +81,20 @@ msgid "Contact"
 msgstr "Контакты"
 
 #: templates/base.html:94
-msgid "We listen"
-msgstr "Слушаем"
+msgid "We listen."
+msgstr "Слушаем."
 
 #: templates/base.html:99
-msgid "We discuss"
-msgstr "Обсуждаем"
+msgid "We discuss."
+msgstr "Обсуждаем."
 
 #: templates/base.html:104
-msgid "We develop"
-msgstr "Разрабатываем"
+msgid "We develop."
+msgstr "Разрабатываем."
 
 #: templates/base.html:120
 msgid "Just neat applications"
-msgstr "Аккуратные приложения"
+msgstr "Изящные приложения"
 
 #: templates/base.html:121
 msgid "Applications for everyone and elegant solution for your business."
@@ -138,14 +138,14 @@ msgid ""
 "software products."
 msgstr ""
 "Neatapps это команда специализированных разработчиков программного "
-"обеспечения. Мы любим создать аккуратные приложения."
+"обеспечения. Нам нравится создать изящные приложения."
 
 #: templates/base.html:203
 msgid ""
 "We listen, we discuss and develop. We love to learn and use the latest "
 "technologies."
 msgstr ""
-"Выслушаем Вас, обсудим с Вами и разработаем для Вас проект. Мы любим учиться и использовать "
+"Выслушаем Вас, обсудим с Вами и разработаем для Вас проект. Нам нравится учиться и использовать "
 "современные технологии."
 
 #: templates/base.html:232
