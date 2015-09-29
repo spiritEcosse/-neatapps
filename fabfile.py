@@ -1,20 +1,16 @@
 __author__ = 'igor'
 
-from fabric.api import local, run, require, cd, settings
+from fabric.api import local, run, cd, settings
 import os
 from neatapps.settings import BASE_DIR
 from fabric.state import env
-# env.hosts = ['root@78.24.216.187', 'root@185.65.247.131']
+from neatapps.settings_local import HOSTS
 env.user = 'root'
 env.skip_bad_hosts = True
 env.warn_only = True
 env.parallel = True
-env.shell = "/bin/sh -c"
-HOSTS = [
-    # ('root@78.24.216.187', '/home/igor/web/www/neatapps'),
-    ('root@185.65.247.131', '/home/neatapps/web/www/neatapps')]
+env.shell = "/bin/bash -l -i -c"
 REQUIREMENTS_FILE = 'requirements.txt'
-TORNADO_SCRIPT = 'tornado_main.py'
 
 
 def deploy():
@@ -50,6 +46,8 @@ def local_act():
     execfile(activate_env, dict(__file__=activate_env))
     local("./manage.py test")
     local("./manage.py compilemessages")
+    local("./manage.py makemigrations")
+    local("./manage.py migrate")
     local("%s%s" % ('pip freeze > ', REQUIREMENTS_FILE))
     local("./manage.py collectstatic --noinput")
     local("git add .")

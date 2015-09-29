@@ -14,9 +14,10 @@ jQuery(function(){
     });
 
     $("#Top").click(function(){
+        $(this).css('display', 'none');
         $("html, body").animate({scrollTop:0},"slow");
         $($('.navmenu li.active a').attr('href')).next();
-    })
+    });
     $("#Bottom").click(function(){
         if ($('.navmenu li.active').next().index() != -1) {
             var height_menuF = 0;
@@ -27,7 +28,8 @@ jQuery(function(){
 
             $("html, body").animate({scrollTop: $($('.navmenu li.active').next().find('a').attr('href')).offset().top - 80 - height_menuF}, "slow");
         } else {
-            $("html, body").animate({scrollTop:$(document).height()},"slow")
+            $(this).css('display', 'none');
+            $("html, body").animate({scrollTop:$(document).height()},"slow");
         }
     });
 });

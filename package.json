@@ -10,6 +10,7 @@
     "grunt-contrib-coffee": "^0.13.0",
     "grunt-npm-install": "^0.2.0",
     "http-server": "^0.6.1",
+    "jshint": "^2.8.0",
     "karma": "^0.12.16",
     "karma-chrome-launcher": "^0.1.4",
     "karma-coffee-preprocessor": "^0.3.0",
