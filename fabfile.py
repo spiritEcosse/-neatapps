@@ -37,7 +37,7 @@ def remote_act():
             with cd(dir_name):
                 run("git reset --hard")
                 run("kill -9 $(ps -ef|grep -v grep |grep 'neatapps' | awk '{print $2}')")
-                run("neatapps", pty=False)
+                run("neatapps")
 
 
 def local_act():
