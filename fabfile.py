@@ -19,8 +19,8 @@ def deploy():
     :return:
     """
     local_act()
-    update_requirements()
-    remote_act()
+    # update_requirements()
+    # remote_act()
 
 
 def remote_act():
