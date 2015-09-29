@@ -7,7 +7,7 @@ from fabric.state import env
 from neatapps.settings_local import HOSTS
 env.user = 'root'
 env.skip_bad_hosts = True
-env.warn_only = True
+env.warn_only = False
 env.parallel = True
 env.shell = "/bin/bash -l -i -c"
 REQUIREMENTS_FILE = 'requirements.txt'
@@ -19,8 +19,8 @@ def deploy():
     :return:
     """
     local_act()
-    update_requirements()
-    remote_act()
+    # update_requirements()
+    # remote_act()
 
 
 def remote_act():

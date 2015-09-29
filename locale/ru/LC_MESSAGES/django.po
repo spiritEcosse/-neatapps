@@ -157,8 +157,6 @@ msgid "All Works"
 msgstr "Все проекты"
 
 #: templates/base.html:258 templates/base.html.py:265
-#, fuzzy
-#| msgid "Breathing exercises: Anuloma Viloma"
 msgid "Breathing exercises: Mind balance"
 msgstr "Дыхательные упражнения: Гармонизация"
 
