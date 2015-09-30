@@ -7050,7 +7050,12 @@ body {
 }
 @media (max-width: 390px) {
   .camera_caption h2.lang_ru {
-    font-size: 30px;
+    font-size: 37px ;
+  }
+}
+@media (max-width: 350px) {
+  .camera_caption h2.lang_ru {
+    font-size: 30px ;
   }
 }
 .slicknav_menu {
