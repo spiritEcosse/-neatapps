@@ -7018,14 +7018,39 @@ body {
     font-size: 80px;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 840px) {
   .camera_caption h2.lang_ru {
     font-size: 70px;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 767px) {
+  .camera_caption h2.lang_ru {
+    font-size: 62px;
+  }
+}
+@media (max-width: 600px) {
+  .camera_caption h2.lang_ru {
+    font-size: 57px;
+  }
+}
+@media (max-width: 550px) {
   .camera_caption h2.lang_ru {
     font-size: 50px;
+  }
+}
+@media (max-width: 480px) {
+  .camera_caption h2.lang_ru {
+    font-size: 45px;
+  }
+}
+@media (max-width: 440px) {
+  .camera_caption h2.lang_ru {
+    font-size: 40px;
+  }
+}
+@media (max-width: 390px) {
+  .camera_caption h2.lang_ru {
+    font-size: 30px;
   }
 }
 .slicknav_menu {
