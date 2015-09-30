@@ -38,9 +38,9 @@ class NeatappsJqueryTests(LiveServerTestCase):
         """test scroll main menu """
         self.selenium.get(self.live_server_url)
         for link in self.selenium.find_elements_by_xpath('//*[@id="menu"]//a'):
-            link.click()
             element = link.get_attribute('href').split('#')[1]
             self.assertEqual(True, self.selenium.find_element_by_id(element).is_enabled())
+            link.click()
 
     def test_buttons_down_up(self):
         """test buttons down and up"""

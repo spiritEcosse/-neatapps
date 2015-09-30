@@ -192,12 +192,30 @@ body{
   margin-bottom:0 !important;
   margin-top: 10px;
 }
-.camera_caption h2{
-  border-bottom:4px solid #1fcdff;
-  font-family: 'Open Sans', sans-serif;
-  font-size:100px;
-  font-weight:700;
-  letter-spacing: -2px;
+
+.camera_caption {
+  h2 {
+    border-bottom: 4px solid #1fcdff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 100px;
+    font-weight: 700;
+    letter-spacing: -2px;
+  }
+
+  h2.lang_ru {
+    @media (max-width: @screen-md-min) {
+      font-size: 100px;
+    }
+    @media (max-width: @screen-sm-max) {
+      font-size: 80px;
+    }
+    @media (max-width: @screen-xs-max) {
+      font-size: 70px;
+    }
+    @media (max-width: @screen-xs-min) {
+      font-size: 50px;
+    }
+  }
 }
 
 .slicknav_menu {
