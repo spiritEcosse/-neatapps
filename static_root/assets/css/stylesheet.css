@@ -7007,7 +7007,6 @@ body {
   font-size: 100px;
   font-weight: 700;
   letter-spacing: -2px;
-  padding-bottom: 13px;
 }
 .slicknav_menu {
   display: none;
@@ -9034,14 +9033,19 @@ background: rgba(0,0,0,0);
   max-width: 50px;
   max-height: 50px;
 }
-@media (max-width: 991px) {
+@media (max-width: 1199px) {
+  .camera_caption h2 {
+    font-size: 80px;
+  }
+}
+@media (max-width: 992px) {
   .camera_caption h2 {
     font-size: 60px;
   }
 }
 @media (max-width: 768px) {
   .camera_caption h2 {
-    font-size: 30px;
+    font-size: 50px;
   }
 }
 .head {

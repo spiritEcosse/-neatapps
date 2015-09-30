@@ -198,7 +198,6 @@ body{
   font-size:100px;
   font-weight:700;
   letter-spacing: -2px;
-  padding-bottom: 13px;
 }
 
 .slicknav_menu {
@@ -2314,11 +2313,14 @@ background: rgba(0,0,0,0);
 }
 
 .camera_caption h2 {
-  @media(max-width:@screen-sm-max) {
+  @media(max-width:@screen-md-max) {
+    font-size: 80px;
+  }
+  @media(max-width:@screen-md-min) {
     font-size: 60px;
   }
   @media (max-width: @screen-sm-min) {
-    font-size: 30px;
+    font-size: 50px;
   }
 }
 

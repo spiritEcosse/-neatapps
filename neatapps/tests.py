@@ -42,32 +42,24 @@ class NeatappsJqueryTests(LiveServerTestCase):
             element = link.get_attribute('href').split('#')[1]
             self.assertEqual(True, self.selenium.find_element_by_id(element).is_enabled())
 
-    def test_button_down(self):
-        """test button down """
+    def test_buttons_down_up(self):
+        """test buttons down and up"""
         self.selenium.get(self.live_server_url)
         button_down = self.selenium.find_element_by_id('Bottom')
         self.assertEqual(True, button_down.is_displayed())
-        button_down.click()
-        button_down.click()
-        button_down.click()
-        button_down.click()
-        # self.selenium.execute_script("window.scrollBy(0,document.body.scrollHeight);")
-        # self.assertEqual(False, button_down.is_displayed())
-        # self.selenium.execute_script("window.scrollBy(0, 0)")
-        # self.assertEqual(True, button_down.is_displayed())
-
-    def test_button_up(self):
-        """test button up"""
-        self.selenium.get(self.live_server_url)
         button_up = self.selenium.find_element_by_id('Top')
         self.assertEqual(False, button_up.is_displayed())
-        self.selenium.execute_script("window.scrollBy(0,250)")
+        button_down.click()
+        self.assertEqual(True, button_down.is_displayed())
         self.assertEqual(True, button_up.is_displayed())
-        self.selenium.execute_script("window.scrollBy(0,document.body.scrollHeight);")
+        button_down.click()
         self.assertEqual(True, button_up.is_displayed())
-        # button_up.click()
-        # self.selenium.execute_script("window.scrollTo(0, 0);")
-        # self.assertEqual(False, button_up.is_displayed())
+        self.assertEqual(True, button_down.is_displayed())
+        button_down.click()
+        self.assertEqual(True, button_up.is_displayed())
+        self.assertEqual(True, button_down.is_displayed())
+        button_down.click()
+        self.assertEqual(True, button_up.is_displayed())
 
 
 class AdminTestCase(LiveServerTestCase):

@@ -1,16 +1,30 @@
 jQuery(function(){
     $("#Top").hide().removeAttr("href");
-    if ($(window).scrollTop()>="200") $("#Top").fadeIn("slow")
+
+    if ($(window).scrollTop()>="200") {
+        $("#Top").fadeIn('fast');
+    }
+
     $(window).scroll(function(){
-        if ($(window).scrollTop()<="200") $("#Top").fadeOut("slow")
-        else $("#Top").fadeIn("slow")
+        if ($(window).scrollTop()<="200") {
+            $("#Top").fadeOut('fast');
+        }else {
+            $("#Top").fadeIn('fast');
+        }
     });
 
     $("#Bottom").hide().removeAttr("href");
-    if ($(window).scrollTop()<=$(document).height()-"999") $("#Bottom").fadeIn("slow")
+
+    if ($(window).scrollTop()<=$(document).height()-"999") {
+        $("#Bottom").fadeIn('fast');
+    }
+
     $(window).scroll(function(){
-        if ($(window).scrollTop()>=$(document).height()-"999") $("#Bottom").fadeOut("slow")
-        else $("#Bottom").fadeIn("slow")
+        if ($(window).scrollTop()>=$(document).height()-"999") {
+            $("#Bottom").fadeOut('fast');
+        } else {
+            $("#Bottom").fadeIn('fast');
+        }
     });
 
     $("#Top").click(function(){
