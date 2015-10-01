@@ -7007,6 +7007,57 @@ body {
   font-size: 100px;
   font-weight: 700;
   letter-spacing: -2px;
+  white-space: nowrap;
+}
+@media (max-width: 992px) {
+  .camera_caption h2 {
+    font-size: 112px;
+  }
+}
+@media (max-width: 991px) {
+  .camera_caption h2 {
+    font-size: 92px;
+  }
+}
+@media (max-width: 840px) {
+  .camera_caption h2 {
+    font-size: 82px;
+  }
+}
+@media (max-width: 767px) {
+  .camera_caption h2 {
+    font-size: 74px;
+  }
+}
+@media (max-width: 600px) {
+  .camera_caption h2 {
+    font-size: 69px;
+  }
+}
+@media (max-width: 550px) {
+  .camera_caption h2 {
+    font-size: 62px;
+  }
+}
+@media (max-width: 480px) {
+  .camera_caption h2 {
+    font-size: 57px;
+  }
+}
+@media (max-width: 440px) {
+  .camera_caption h2 {
+    font-size: 52px;
+  }
+}
+@media (max-width: 390px) {
+  .camera_caption h2 {
+    font-size: 49px ;
+  }
+}
+@media (max-width: 350px) {
+  .camera_caption h2 {
+    font-size: 40px;
+  }
 }
 @media (max-width: 992px) {
   .camera_caption h2.lang_ru {
@@ -7110,9 +7161,6 @@ body {
   .pic1Ab {
     padding-bottom: 0 !important;
     margin-bottom: 0;
-  }
-  .camera_caption h2 {
-    font-size: 65px;
   }
   .about h3 {
     text-align: center;
