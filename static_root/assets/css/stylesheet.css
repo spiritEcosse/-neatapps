@@ -7049,9 +7049,14 @@ body {
     font-size: 52px;
   }
 }
-@media (max-width: 390px) {
+@media (max-width: 370px) {
   .camera_caption h2 {
-    font-size: 49px ;
+    font-size: 48px;
+  }
+}
+@media (max-width: 360px) {
+  .camera_caption h2 {
+    font-size: 44px;
   }
 }
 @media (max-width: 350px) {
